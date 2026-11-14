@@ -257,3 +257,21 @@ def test_competitor_alias_and_multipart_quotes():
     assert extraction.quote_grounded("We need data to stay in Canada. | We swap models often.", tx)
     assert extraction.quote_grounded("data to stay in Canada ... We swap models often", tx)
     assert not extraction.quote_grounded("We need data to stay in Germany. | We swap models often.", tx)   # a fabricated part still fails
+
+
+# ---------- the app itself must compile and render (AppTest alone reports 0 exceptions on a SyntaxError) ----------
+import py_compile
+PAGES_ALL = ["Verdict", "Behavioral evidence", "Pipeline evidence", "Stated vs revealed", "Assumptions", "Data and validation", "Data explorer"]
+
+def test_app_and_package_compile():
+    for p in [ROOT / "app.py", *(ROOT / "analyzer").glob("*.py"), *(ROOT / "generator").glob("*.py")]:
+        py_compile.compile(str(p), doraise=True)
+
+@pytest.mark.parametrize("scenario", ["component", "latent_standalone"])
+@pytest.mark.parametrize("page", PAGES_ALL)
+def test_every_page_renders(scenario, page):
+    from streamlit.testing.v1 import AppTest
+    at = AppTest.from_file(str(ROOT / "app.py"), default_timeout=120)
+    at.session_state["scenario"] = scenario; at.session_state["page"] = page; at.run()
+    assert not at.exception
+    assert len(at.title) == 1 and any("Synthetic data" in e.value for e in at.error), f"{scenario}/{page} did not render (title/banner missing)"
