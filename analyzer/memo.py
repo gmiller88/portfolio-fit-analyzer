@@ -54,27 +54,38 @@ def build_facts(area, am, th):
          "retention_window_months": 12, "paid_window_days": 90}
     return f
 
-def _nums(obj, out):
-    if isinstance(obj, bool) or obj is None: return
-    if isinstance(obj, (int, float)): out.append(float(obj))
-    elif isinstance(obj, dict):
-        for x in obj.values(): _nums(x, out)
-    elif isinstance(obj, (list, tuple)):
-        for x in obj: _nums(x, out)
-    elif isinstance(obj, str):
-        for t in re.findall(r"\d+(?:\.\d+)?", obj): out.append(float(t))
-
 def memo_text(res):
     return " ".join([res["headline"], res["evidence"], *res["weaknesses"], *[f"{a['title']} {a['rationale']} {a['metric_to_watch']}" for a in res["actions"]]])
 
+def _pools(obj, pct, plain, key=""):
+    """Split every number in FACTS into percent-valued and plain numbers (keys ending _pct, and numbers written before % inside strings, are percents)."""
+    if isinstance(obj, bool) or obj is None: return
+    if isinstance(obj, (int, float)): (pct if key.endswith("_pct") else plain).append(float(obj))
+    elif isinstance(obj, dict):
+        for k, x in obj.items(): _pools(x, pct, plain, k)
+    elif isinstance(obj, (list, tuple)):
+        for x in obj: _pools(x, pct, plain, key)
+    elif isinstance(obj, str):
+        for t, p in re.findall(r"(\d+(?:\.\d+)?)(%?)", obj): (pct if p else plain).append(float(t))
+
+SPELLED = {"four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8, "nine": 9, "ten": 10, "eleven": 11, "twelve": 12, "thirteen": 13, "fourteen": 14, "fifteen": 15, "twenty": 20,
+           "thirty": 30, "forty": 40, "fifty": 50, "sixty": 60, "seventy": 70, "eighty": 80, "ninety": 90, "hundred": 100, "thousand": 1000}
+FRACTIONAL = r"\b(?:half|halves|(?:a|one)[ -](?:quarter|third|fifth|tenth)|(?:two|three)[ -](?:thirds|quarters|fifths)|double[ds]?|triple[ds]?|twice|thrice)\b"
+
 def check_numbers(text, facts):
-    """Every numeric token in the memo must equal a number in facts (to the precision written). Returns (ok, unmatched)."""
-    allowed = []; _nums(facts, allowed)
+    """Numeric guard. (1) every numeral must equal a number in FACTS to the precision written, and a number written with % must match a percent fact;
+    (2) spelled-out numbers of four or more, and fractional or multiplicative words (half, a quarter, double, twice), are rejected unless the number is itself in FACTS.
+    It cannot tell that a correct-looking number is attached to the wrong metric. Returns (ok, unmatched)."""
+    pct, plain = [], []; _pools(facts, pct, plain)
     bad = []
-    for tok in re.findall(r"(?<![\w.])\d+(?:\.\d+)?", text):
-        v = float(tok); dec = len(tok.split(".")[1]) if "." in tok else 0
-        tol = 0.5 * 10 ** (-dec) + 1e-9
-        if not any(abs(v - a) <= tol for a in allowed): bad.append(tok)
+    for tok, p in re.findall(r"(?<![\w.])(\d+(?:\.\d+)?)(%?)", text):
+        v = float(tok); dec = len(tok.split(".")[1]) if "." in tok else 0; tol = 0.5 * 10 ** (-dec) + 1e-9
+        pool = pct if p else plain
+        if not any(abs(v - a) <= tol for a in pool): bad.append(tok + p)
+    allowed = pct + plain
+    for w in re.findall(r"\b(" + "|".join(SPELLED) + r")\b", text, re.I):
+        if not any(abs(SPELLED[w.lower()] - a) < 0.5 for a in allowed): bad.append(w)
+    bad += [w.strip() for w in re.findall(FRACTIONAL, text, re.I)]
     return (not bad), bad
 
 def _key(facts, model):

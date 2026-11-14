@@ -8,7 +8,7 @@ def main(argv=None):
     sub = ap.add_subparsers(dest="cmd", required=True)
     v = sub.add_parser("verdict", help="verdicts + metrics as JSON"); v.add_argument("--scenario", required=True, choices=SCENARIOS); v.add_argument("--area", choices=AREAS)
     v.add_argument("--memo", action="store_true", help="include the (cached) memo"); v.add_argument("--set", action="append", default=[], metavar="a.b=0.3", help="override a threshold, e.g. pipeline.standalone_win_rate_min=0.4")
-    v.add_argument("--no-metrics", action="store_true")
+    v.add_argument("--no-metrics", action="store_true"); v.add_argument("--stability", action="store_true", help="add bootstrap verdict stability (about 10 s)")
     e = sub.add_parser("extract", help="run transcript extraction (uses cache; calls Claude only on misses)"); e.add_argument("--scenario", required=True, choices=SCENARIOS); e.add_argument("--regenerate", action="store_true")
     va = sub.add_parser("validate", help="score extractions against ground truth"); va.add_argument("--scenario", required=True, choices=SCENARIOS)
     m = sub.add_parser("memo", help="generate memos with Claude for the default thresholds"); m.add_argument("--scenario", required=True, choices=SCENARIOS)
@@ -19,16 +19,24 @@ def main(argv=None):
     if a.cmd == "validate":
         r = validation.validate(a.scenario, extraction.load_cached(a.scenario)); r.pop("errors", None); print(json.dumps(r, indent=1)); return
     th = load_thresholds()
-    for s in getattr(a, "set", []):
-        k, val = s.split("="); sec, _, name = k.partition(".")
-        if name: th[sec][name] = float(val)
-        else: th[sec] = float(val)
+    for item in getattr(a, "set", []):
+        key, eq, val = item.partition("=")
+        sec, dot, name = key.strip().partition(".")
+        node = th[sec] if dot and isinstance(th.get(sec), dict) else th
+        leaf = name if dot else sec
+        if not eq or leaf not in node or isinstance(node[leaf], dict):
+            valid = sorted(f"{k}.{x}" if isinstance(v, dict) else k for k, v in th.items() for x in (v if isinstance(v, dict) else [None]))
+            ap.error(f"unknown threshold {key!r}; valid keys: {', '.join(valid)}")
+        try: node[leaf] = type(node[leaf])(float(val)) if not isinstance(node[leaf], int) else int(float(val))
+        except ValueError: ap.error(f"threshold {key!r} needs a number, got {val!r}")
     res = analysis.analyze(a.scenario, th)
     if a.cmd == "memo":
         for ar in AREAS:
             mm = memo.get_memo(ar, res["areas"][ar], th, allow_llm=True); print(ar, mm["source"], "flagged" if mm["flagged"] else "ok", mm["unmatched_numbers"])
         return
     out = {"scenario": a.scenario, "thresholds": th, "areas": {}}
+    if a.stability:
+        from . import stability; out["stability"] = stability.bootstrap(a.scenario, th, res["areas"], write=True)
     for ar, x in res["areas"].items():
         if a.area and ar != a.area: continue
         o = {"label": x["label"], "verdict": x["verdict"]}

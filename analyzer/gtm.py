@@ -7,7 +7,7 @@ pc = lambda x: f"{x * 100:.1f}%"
 
 def weaknesses(area, m, verdict, th):
     b, p, s = m["behavioral"], m["pipeline"], m["selfserve"]
-    ms = th["min_sample"]; A = AREA_LABEL[area]
+    ms = max(1, th["min_sample"]); A = AREA_LABEL[area]
     if verdict["key"] == "insufficient":
         why = verdict["behavior"]["insufficient_reason"] or verdict["pipeline"]["insufficient_reason"]
         return [{"id": "evidence", "stage": "evidence", "severity": 1.0, "tags": ["evidence"], "text": f"There is too little evidence to judge {A}: {why}."}]
@@ -23,7 +23,7 @@ def weaknesses(area, m, verdict, th):
     nv, wv, base = s["paid_90d_rate_no_voice"], s["paid_90d_rate_with_voice"], s["baseline_paid_90d_rate_all_signups"]
     if nv is not None and base and nv < base:
         add("conversion", "paid conversion", (base - nv) / base, f"Paid conversion within 90 days without voice is {pc(nv)} against {pc(base)} for all signups.", ["conversion"])
-    if nv is not None and wv and wv > 1.5 * max(nv, 1e-9):
+    if nv is not None and wv and wv > 1.5 * max(nv, 1e-9) and (base is None or nv < base):
         add("voice_dependence", "paid conversion", 0.9 * (1 - nv / wv), f"Signups pay mainly when paired with voice: {pc(wv)} with voice versus {pc(nv)} without.", ["voice_dependence", "conversion"])
     sh, thr = b["standalone_usage_share"], verdict["behavior"]["threshold_effective"]
     if sh is not None and sh < thr:

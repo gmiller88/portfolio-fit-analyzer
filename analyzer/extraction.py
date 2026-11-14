@@ -104,8 +104,10 @@ def load_cached(scenario):
 def flat(ex):
     return {k: v["value"] for k, v in ex.items()}
 
-_norm = lambda s: re.sub(r"[^a-z0-9$%.' ]+", " ", s.lower().replace("’", "'").replace("**", "")).split()
+_norm = lambda s: re.sub(r"[^a-z0-9$%.' ]+", " ", s.lower().replace("\u2019", "'").replace("**", "")).split()
 def quote_grounded(quote, text):
+    """True if the quote appears verbatim in the transcript. Multi-part quotes (joined with ' | ', '...' or an ellipsis) are checked part by part."""
     if not quote: return True
-    q, t = " ".join(_norm(quote)), " ".join(_norm(text))
-    return q in t
+    t = " ".join(_norm(text))
+    parts = [p for p in re.split(r"\s\|\s|\.\.\.|\u2026", quote) if p.strip()]
+    return all(" ".join(_norm(p)) in t for p in parts)

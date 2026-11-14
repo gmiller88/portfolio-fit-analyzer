@@ -85,8 +85,8 @@ def behavioral(t, area):
 def pipeline(ext_flat, ext_full, opps, area):
     fk, rk = ("inference_framing", "inference_raised_by") if area == "inference" else ("edge_framing", "edge_raised_by")
     ck = "competitors_inference" if area == "inference" else "competitors_edge"
-    o = opps.set_index("opp_id")
-    rows = [{"opp_id": oid, "framing": f[fk], "raised": f[rk], "outcome": o.loc[oid, "outcome"] if oid in o.index else None, "account_id": o.loc[oid, "account_id"] if oid in o.index else None,
+    outc, acct = dict(zip(opps["opp_id"], opps["outcome"])), dict(zip(opps["opp_id"], opps["account_id"]))
+    rows = [{"opp_id": oid, "framing": f[fk], "raised": f[rk], "outcome": outc.get(oid), "account_id": acct.get(oid),
              "reason": f["stated_reason"], "criteria": f["decision_criteria"], "comps": f[ck]} for oid, f in ext_flat.items()]
     d = pd.DataFrame(rows)
     n = len(d)

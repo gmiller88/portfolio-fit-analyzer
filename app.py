@@ -3,7 +3,7 @@ import copy, json
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
-from analyzer import analysis, data, extraction, gtm, memo, validation
+from analyzer import analysis, data, extraction, gtm, memo, stability, validation
 from analyzer.config import AREAS, AREA_LABEL, SCENARIOS, load_thresholds, scenario_description, PROMPT_VERSION
 from analyzer.verdict import LABELS
 
@@ -20,6 +20,10 @@ T = st.session_state["T"]
 @st.cache_data(show_spinner=False)
 def run(scenario, th_json):
     return analysis.analyze(scenario, json.loads(th_json))
+
+@st.cache_data(show_spinner=False)
+def run_stability(scenario, th_json):
+    th = json.loads(th_json); return stability.bootstrap(scenario, th, analysis.analyze(scenario, th)["areas"], B=300)
 
 @st.cache_data(show_spinner=False)
 def run_validation(scenario):
@@ -67,6 +71,13 @@ if page == "Verdict":
                 for c in v["behavior"]["checks"] + v["pipeline"]["checks"]:
                     st.markdown(f"{'✅' if c['passes'] else '❌'} {c['text']}" + ("  ⚠️ *within 5 pts: sensitive*" if c["sensitive"] else ""))
                 st.caption(v["behavior"]["selfserve_note"])
+            with st.spinner("Resampling to test how stable this verdict is…"): stab = (run_stability(scenario, json.dumps(T)) or {}).get(a)
+            if stab and v["key"] != "insufficient":
+                keep, lo_hi = stab["share_keeping_point_verdict"], stab["usage_share_90pct_interval"]
+                other = ", ".join(f"{LABELS[k].split(' (')[0]} {p * 100:.0f}%" for k, p in stab["distribution"].items() if k != v["key"] and p >= 0.03)
+                (st.success if keep >= 0.9 else st.warning if keep >= 0.6 else st.error)(
+                    f"**How stable is this verdict?** It held in {keep * 100:.0f}% of {stab['draws']} resamples of the transcripts and accounts" + (f"; otherwise: {other}." if other else ".")
+                    + f" Standalone usage share 90% interval: {lo_hi[0] * 100:.0f}% to {lo_hi[1] * 100:.0f}%.", icon="🎲" if keep >= 0.9 else "⚠️")
             mm = memo.get_memo(a, x, R["thresholds"])
             st.markdown("**Memo** &nbsp; <span style='color:#64748b;font-size:0.8em'>" + mm["source"] + "</span>", unsafe_allow_html=True)
             st.markdown(f"*{mm['headline']}*"); st.markdown(mm["evidence"])
@@ -75,9 +86,10 @@ if page == "Verdict":
             st.markdown("**Top 3 GTM actions to try**")
             for i, ac in enumerate(mm["actions"], 1):
                 st.markdown(f"{i}. **{ac['title']}**  \n{ac['rationale']}  \n*Watch:* {ac['metric_to_watch']}")
-            st.caption("Weaknesses are ranked by shortfall against an explicit benchmark; actions by how directly they address those weaknesses. This is a prioritisation heuristic on synthetic data, not a forecast of impact.")
+            st.caption("Weaknesses are ranked by shortfall against an explicit benchmark; actions by how directly they address those weaknesses. This is a prioritisation heuristic on synthetic data, not a forecast of impact."
+                       + (" For a component verdict, read these as experiments to test whether a standalone path is worth unlocking, not as a case for funding a standalone category." if v["key"] == "component" else ""))
             if mm["flagged"]: st.warning(f"Memo flagged: numbers not found in metrics {mm['unmatched_numbers']}; recommendation matches verdict: {mm['recommendation_matches_verdict']}; actions match plan: {mm['actions_match_plan']}")
-            else: st.caption("✔ Every number in this memo was checked against the metrics object.")
+            else: st.caption("✔ Numbers checked against the metrics object (digits and spelled-out numbers; it cannot tell whether a correct number is attached to the right metric).")
     st.divider(); st.markdown("#### Where each area sits")
     fig = go.Figure()
     for a in AREAS:
@@ -262,7 +274,7 @@ elif page == "Data and validation":
     cnt[0].metric("Accounts", len(tables["accounts"])); cnt[1].metric("Usage rows", f"{len(tables['usage_monthly']):,}"); cnt[2].metric("Opportunities", len(tables["opportunities"]))
     cnt[3].metric("Transcripts", len(data.transcripts(scenario))); cnt[4].metric("Signups", f"{len(tables['signups']):,}")
     st.markdown("#### Did the extractions get it right?")
-    st.caption(f"Claude's transcript extractions are scored against the hidden answer key the generator wrote. Only this page's validation step reads that key. Model: `{extraction.model_name()}`, prompt version `{PROMPT_VERSION}`.")
+    st.caption(f"Claude's transcript extractions are scored against the hidden answer key the generator wrote. Only the validation module reads that key (it also serves the answer-key download on Data explorer). Model: `{extraction.model_name()}`, prompt version `{PROMPT_VERSION}`.")
     vres = run_validation(scenario)
     if not vres["n_transcripts"]: st.error("No cached extractions to validate.")
     else:
@@ -272,7 +284,7 @@ elif page == "Data and validation":
         fv = pd.DataFrame([{"Field": f["field"], "Metric": f["metric"], "n": f["n"], "Accuracy": round(f["accuracy"] * 100, 1), "Mean Jaccard": "–" if f.get("mean_jaccard") is None else f"{f['mean_jaccard']:.2f}",
                             "Acc. when high conf. %": "–" if f["acc_high"] is None else f"{f['acc_high'] * 100:.1f}", "n high": f["n_high"]} for f in vres["fields"]])
         st.dataframe(fv, hide_index=True, width="stretch", column_config={"Accuracy": st.column_config.ProgressColumn("Accuracy %", min_value=0, max_value=100, format="%.1f")})
-        st.caption("Decision criteria are scored as an exact set match (harsh) and by Jaccard overlap. 'Single biggest concern' is only scored on lost deals, and transcripts voice several concerns, so it is the weakest field: treat loss-reason shares as directional.")
+        st.caption("Competitor names are matched case-insensitively and "OpenAI direct" counts as "OpenAI". Decision criteria are scored as an exact set match (harsh) and by Jaccard overlap. 'Single biggest concern' is only scored on lost deals, and transcripts voice several concerns, so it is the weakest field: treat loss-reason shares as directional.")
         with st.expander(f"Misses ({len(vres['errors'])})"): st.dataframe(pd.DataFrame(vres["errors"]), hide_index=True, width="stretch")
     try: hist = json.load(open(__import__("analyzer.config", fromlist=["CACHE"]).CACHE / "prompt_history.json"))
     except Exception: hist = {}

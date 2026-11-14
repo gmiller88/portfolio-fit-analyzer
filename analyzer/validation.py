@@ -4,7 +4,9 @@ from .config import scenario_dir
 from .extraction import flat, quote_grounded
 from .data import transcripts
 
-def _set(v): return {x.strip().lower() for x in (v.split("|") if isinstance(v, str) else v) if x and x.strip()}
+ALIASES = {"openai direct": "openai"}   # the dataset labels OpenAI's own API "OpenAI direct"; transcripts say "OpenAI"
+
+def _set(v): return {ALIASES.get(x.strip().lower(), x.strip().lower()) for x in (v.split("|") if isinstance(v, str) else v) if x and x.strip()}
 
 def validate(scenario, extractions):
     truth = pd.read_csv(scenario_dir(scenario) / "ground_truth" / "transcript_truth.csv", keep_default_na=False)

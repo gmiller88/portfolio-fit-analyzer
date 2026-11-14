@@ -111,10 +111,10 @@ def test_driver_text_and_sensitivity():
     assert "4.0 pts below the threshold" in t["text"] and t["sensitive"] and not t["passes"]
 
 # ---------- memo number guard ----------
-FACTS = {"a": 20.0, "n": 11, "x": {"y": 5.5}, "s": "12-month window", "retention_window_months": 12}
+FACTS = {"a_pct": 20.0, "n": 11, "x": {"y": 5.5}, "s": "12-month window", "retention_window_months": 12}
 def test_number_check_accepts_rounding_and_rejects_fabrication():
     assert memo.check_numbers("Share is 20.0% and 20% overall; 11 deals; 5.5 pts; 12-month", FACTS)[0]
-    ok, bad = memo.check_numbers("Share is 21.0% across 11 deals", FACTS); assert not ok and bad == ["21.0"]
+    ok, bad = memo.check_numbers("Share is 21.0% across 11 deals", FACTS); assert not ok and bad == ["21.0%"]
     assert not memo.check_numbers("There were 19 deals", FACTS)[0]
 
 # ---------- repo rules ----------
@@ -206,3 +206,54 @@ def test_data_bundle_never_includes_the_answer_key():
 def test_region_na_is_not_read_as_missing():
     accts = data.load("component")["accounts"]
     assert accts["region"].isna().sum() == 0 and (accts["region"] == "NA").sum() > 0
+
+
+# ---------- hardened memo guard ----------
+FACTS2 = {"win_pct": 25.0, "thr_pct": 35.2, "n": 10, "gap": "5.0 pts below (20.0% vs 25.0%)", "retention_window_months": 12, "paid_window_days": 90}
+def test_guard_rejects_percent_type_swaps():
+    assert memo.check_numbers("Win rate is 25.0% on 10 deals", FACTS2)[0]
+    ok, bad = memo.check_numbers("Win rate is 10% on 25 deals", FACTS2); assert not ok and "10%" in bad and "25" in bad   # 10 is a count, 25.0 a percent: both mis-typed
+    assert not memo.check_numbers("That is 10.0% of calls", FACTS2)[0] and not memo.check_numbers("across 25 deals", FACTS2)[0]
+def test_guard_rejects_spelled_out_and_fractional_numbers():
+    for bad in ("about thirty percent of deals", "roughly a quarter are won", "win rate is half of bundled", "doubled versus last time", "fifty deals"):
+        assert not memo.check_numbers(bad, FACTS2)[0], bad
+    assert memo.check_numbers("A twelve-month window and a ninety-day paid window; the top three actions", FACTS2)[0]
+
+
+# ---------- CLI ----------
+import json, subprocess, sys
+def _cli(*args): return subprocess.run([sys.executable, "-m", "analyzer", *args], cwd=ROOT, capture_output=True, text=True)
+
+def test_cli_rejects_unknown_or_bad_thresholds():
+    for bad in ("pipeline.bogus=1", "nosuch.key=1", "min_sample=abc", "min_sample", "pipeline=1"):
+        r = _cli("verdict", "--scenario", "component", "--set", bad)
+        assert r.returncode == 2 and "Traceback" not in r.stderr, bad
+
+def test_cli_override_changes_verdict_and_is_strict_json():
+    r = _cli("verdict", "--scenario", "latent_standalone", "--area", "inference", "--no-metrics", "--set", "behavior.standalone_usage_share_min=0.15")
+    assert r.returncode == 0
+    out = json.loads(r.stdout, parse_constant=lambda c: (_ for _ in ()).throw(ValueError(c)))
+    assert out["areas"]["inference"]["verdict"]["key"] == "standalone_business" and out["thresholds"]["behavior"]["standalone_usage_share_min"] == 0.15
+
+
+# ---------- stability ----------
+from analyzer import stability
+def test_bootstrap_is_deterministic_and_reflects_fragility():
+    th = load_thresholds(); r = analysis.analyze("latent_standalone", th)["areas"]
+    a = stability.bootstrap("latent_standalone", th, r, B=60); b = stability.bootstrap("latent_standalone", th, r, B=60)
+    assert a == b                                                       # fixed seed
+    inf = a["inference"]; assert abs(sum(inf["distribution"].values()) - 1) < 0.01
+    assert inf["point_verdict"] == "latent_standalone" and inf["share_keeping_point_verdict"] < 0.9   # the headline call is fragile
+    lo, hi = inf["usage_share_90pct_interval"]; assert lo < r["inference"]["metrics"]["behavioral"]["standalone_usage_share"] < hi
+    c = stability.bootstrap("component", th, analysis.analyze("component", th)["areas"], B=60)
+    assert c["inference"]["share_keeping_point_verdict"] > 0.9          # the component call is robust
+
+
+# ---------- validation scoring ----------
+from analyzer import validation, extraction
+def test_competitor_alias_and_multipart_quotes():
+    assert validation._set("OpenAI direct|Together AI") == validation._set(["openai", "Together AI"])
+    tx = "**Sam (VP, Co):** We need data to stay in Canada. Honestly latency matters. We swap models often."
+    assert extraction.quote_grounded("We need data to stay in Canada. | We swap models often.", tx)
+    assert extraction.quote_grounded("data to stay in Canada ... We swap models often", tx)
+    assert not extraction.quote_grounded("We need data to stay in Germany. | We swap models often.", tx)   # a fabricated part still fails
