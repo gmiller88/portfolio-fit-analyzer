@@ -116,7 +116,10 @@ def selfserve(t, area, base_paid=None):
     s = t["signups"]; g = s[s.entry_product == area]
     wv = g[g.products_at_90d.str.split("|").map(lambda p: "voice_ai_agents" in p)]; nv = g[~g.index.isin(wv.index)]
     rate = lambda x: _r(_div(x.paid_90d.sum(), len(x)))
-    return {"n_signups": int(len(g)), "signup_share": _r(len(g) / len(s)), "activation_rate": _r(_div(g.activated.sum(), len(g))), "paid_90d_rate": rate(g),
+    other = s[s.entry_product != area].groupby("entry_product").size()
+    avg_other = float(other.mean()) if len(other) else None
+    return {"baseline_activation_rate": _r(_div(s.activated.sum(), len(s))), "avg_signups_other_entry_product": _r(avg_other, 1),
+            "signup_volume_index": _r(_div(len(g), avg_other), 2), "n_signups": int(len(g)), "signup_share": _r(len(g) / len(s)), "activation_rate": _r(_div(g.activated.sum(), len(g))), "paid_90d_rate": rate(g),
             "paid_90d_rate_no_voice": rate(nv), "n_no_voice": int(len(nv)), "paid_90d_rate_with_voice": rate(wv), "n_with_voice": int(len(wv)),
             "baseline_paid_90d_rate_all_signups": rate(s)}
 

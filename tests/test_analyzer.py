@@ -146,3 +146,63 @@ def test_cached_memos_pass_number_check(runs):
             m = memo.get_memo(a, x, r["thresholds"])
             assert not m["flagged"], (s, a, m["unmatched_numbers"])
             assert m["source"].startswith("claude (cached)")
+
+
+# ---------- weaknesses and GTM actions ----------
+from analyzer import gtm, data
+
+def _plan(**kw):
+    ss = {"n_signups": 100, "signup_volume_index": 1.0, "activation_rate": 0.6, "baseline_activation_rate": 0.6, "paid_90d_rate_no_voice": 0.1, "paid_90d_rate_with_voice": 0.1, "baseline_paid_90d_rate_all_signups": 0.1}
+    ss.update(kw.pop("ss", {}))
+    b, p, _ = _m(**kw)
+    b.update({"retention_12m": {"standalone": {"rate": 0.8, "n": 20}, "attached": {"rate": 0.8, "n": 20}}})
+    p.update({"n_standalone": 10, "bundled_win_rate": 0.5, "loss_concerns_voiced": {}, "n_standalone_lost": 0})
+    m = {"behavioral": b, "pipeline": p, "selfserve": ss}
+    th = load_thresholds(); v = verdict.classify(b, p, ss, th)
+    return gtm.plan("inference", m, v, th), v
+
+def test_thin_top_of_funnel_recommends_paid_demand_first():
+    plan, _ = _plan(usage=0.5, demand=0.3, win=0.5, ss={"signup_volume_index": 0.4})
+    assert plan["weaknesses"][0]["id"] == "topfunnel" and plan["actions"][0]["id"] == "paid_demand"
+
+def test_poor_activation_recommends_onboarding_and_docs():
+    plan, _ = _plan(usage=0.5, demand=0.3, win=0.5, ss={"activation_rate": 0.2})
+    assert plan["weaknesses"][0]["id"] == "activation" and plan["actions"][0]["id"] == "onboarding"
+
+SS_OK = {"n_signups": 100, "signup_volume_index": 1.0, "activation_rate": 0.6, "baseline_activation_rate": 0.6, "paid_90d_rate_no_voice": 0.1, "paid_90d_rate_with_voice": 0.1, "baseline_paid_90d_rate_all_signups": 0.1}
+
+def test_price_losses_recommend_pricing_action():
+    b, p, _ = _m(usage=0.5, demand=0.3, win=0.1)
+    b["retention_12m"] = {"standalone": {"rate": 0.8, "n": 20}, "attached": {"rate": 0.8, "n": 20}}
+    p.update({"n_standalone": 10, "bundled_win_rate": 0.5, "loss_concerns_voiced": {"price": 6, "latency": 2}, "n_standalone_lost": 8})
+    th = load_thresholds(); m = {"behavioral": b, "pipeline": p, "selfserve": SS_OK}
+    plan = gtm.plan("inference", m, verdict.classify(b, p, SS_OK, th), th)
+    assert "loss_concerns" in [w["id"] for w in plan["weaknesses"]]
+    ids = [a["id"] for a in plan["actions"]]
+    assert ids[0] == "sales_enablement" and "pricing" in ids          # win rate far below bundled ranks sales enablement first; price losses bring in pricing
+
+def test_weaknesses_cover_distinct_stages_and_actions_are_three():
+    plan, _ = _plan(usage=0.05, demand=0.05, win=0.1, ss={"signup_volume_index": 0.5, "activation_rate": 0.3, "paid_90d_rate_no_voice": 0.02, "paid_90d_rate_with_voice": 0.2})
+    assert len({w["stage"] for w in plan["weaknesses"]}) == 3 and len(plan["actions"]) == 3
+    assert [a["score"] for a in plan["actions"]] == sorted((a["score"] for a in plan["actions"]), reverse=True)
+
+def test_insufficient_evidence_yields_evidence_actions():
+    plan, v = _plan(mention=3)
+    assert v["key"] == "insufficient" and plan["weaknesses"][0]["id"] == "evidence" and plan["actions"][0]["id"] == "more_calls"
+
+def test_cached_memos_follow_the_plan(runs):
+    for s, r in runs.items():
+        for a, x in r["areas"].items():
+            m = memo.get_memo(a, x, r["thresholds"])
+            assert m["actions_match_plan"] and len(m["actions"]) == 3 and len(m["weaknesses"]) >= 1
+
+# ---------- data access ----------
+def test_data_bundle_never_includes_the_answer_key():
+    for s in ("component", "latent_standalone"):
+        files = data.scenario_files(s)
+        assert "accounts.csv" in files and sum(k.startswith("transcripts/") for k in files) == 50
+        assert not any("truth" in k or "ground" in k or "effective" in k for k in files)
+
+def test_region_na_is_not_read_as_missing():
+    accts = data.load("component")["accounts"]
+    assert accts["region"].isna().sum() == 0 and (accts["region"] == "NA").sum() > 0

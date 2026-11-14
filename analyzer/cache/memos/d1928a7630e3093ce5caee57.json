@@ -1,0 +1,127 @@
+{
+ "area": "edge_compute",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "m2",
+ "facts": {
+  "area": "Edge Compute",
+  "verdict": {
+   "quadrant": "Component of Voice AI",
+   "recommendation": "invest_as_voice_ai_component"
+  },
+  "behavioral": {
+   "accounts_using": 64,
+   "adoption_pct": 16.0,
+   "standalone_usage_share_pct": 12.0,
+   "standalone_threshold_effective_pct": 35.0,
+   "standalone_accounts": 8,
+   "attached_accounts": 55,
+   "retention_12m_standalone_pct": 37.5,
+   "retention_12m_standalone_n": 8,
+   "retention_12m_attached_pct": 78.6,
+   "retention_12m_attached_n": 14,
+   "gross_margin_standalone_pct": 55.2,
+   "gross_margin_attached_pct": 55.1,
+   "median_months_to_attach": 1.5
+  },
+  "pipeline": {
+   "transcripts": 50,
+   "mentioning": 17,
+   "standalone_framed": 5,
+   "standalone_demand_share_pct": 10.0,
+   "buyer_initiated_share_of_standalone_pct": 40.0,
+   "standalone_closed_deals": 4,
+   "standalone_win_rate_pct": 25.0,
+   "bundled_win_rate_pct": 72.7,
+   "top_loss_concerns": [
+    "maturity",
+    "single_vendor",
+    "latency"
+   ],
+   "top_competitors": [
+    "Cloudflare Workers",
+    "AWS Lambda"
+   ]
+  },
+  "selfserve": {
+   "signups": 120,
+   "paid_90d_rate_without_voice_pct": 2.4,
+   "paid_90d_rate_with_voice_pct": 19.4
+  },
+  "stated_vs_revealed": {
+   "won_accounts_stated_standalone": 1,
+   "mostly_voice_ai_share_pct": 100.0
+  },
+  "thresholds": {
+   "min_sample": 8,
+   "behavior_standalone_usage_share_min_pct": 30.0,
+   "standalone_demand_share_min_pct": 15.0,
+   "buyer_initiated_share_min_pct": 50.0,
+   "standalone_win_rate_min_pct": 25.0
+  },
+  "checks": [
+   "Standalone usage share (revenue) is 23.0 pts below the threshold (12.0% vs 35.0%)",
+   "Standalone demand share is 5.0 pts below the threshold (10.0% vs 15.0%)"
+  ],
+  "sensitive": [
+   "Standalone demand share is 5.0 pts below the threshold (10.0% vs 15.0%)"
+  ],
+  "selfserve_note": "Self-serve signups convert mainly when paired with voice (19.4% with vs 2.4% without), so the threshold is raised by 5 pts.",
+  "insufficient_reason": null,
+  "gtm": {
+   "weaknesses": [
+    "Signups pay mainly when paired with voice: 19.4% with voice versus 2.4% without.",
+    "Only 12.0% of revenue is standalone usage against a 35.0% threshold.",
+    "12-month retention is 37.5% for standalone accounts (n=8) against 78.6% for Voice AI-attached."
+   ],
+   "actions": [
+    {
+     "title": "Improve self-serve onboarding and documentation",
+     "what": "Quickstarts, sample apps and a sandbox that reach a first successful call or request in minutes, plus lifecycle nudges after signup.",
+     "targets": "Signups pay mainly when paired with voice: 19.4% with voice versus 2.4% without. Paid conversion within 90 days without voice is 2.4% against 9.6% for all signups.",
+     "metric_to_watch": "Activation rate and paid conversion without voice"
+    },
+    {
+     "title": "Standalone pricing and packaging",
+     "what": "Free tier or starter credits, price matching on the most-used models, and commit discounts to lower the barrier to a first paid month.",
+     "targets": "Signups pay mainly when paired with voice: 19.4% with voice versus 2.4% without. Paid conversion within 90 days without voice is 2.4% against 9.6% for all signups.",
+     "metric_to_watch": "Paid conversion without voice"
+    },
+    {
+     "title": "Package it with Voice AI",
+     "what": "A starter bundle and in-product prompts that add it to a voice agent, capturing the conversion that already happens when it is paired with voice.",
+     "targets": "Signups pay mainly when paired with voice: 19.4% with voice versus 2.4% without. Paid conversion within 90 days without voice is 2.4% against 9.6% for all signups.",
+     "metric_to_watch": "Paid conversion when paired with voice"
+    }
+   ]
+  },
+  "retention_window_months": 12,
+  "paid_window_days": 90
+ },
+ "memo": {
+  "recommendation": "invest_as_voice_ai_component",
+  "headline": "Edge Compute behaves as a Voice AI component, not a standalone category; invest it alongside Voice AI.",
+  "evidence": "Standalone usage is 12.0% of revenue against a 35.0% threshold, and standalone demand share is 10.0% against 15.0%. Only 8 accounts are standalone, so retention figures are thin (37.5% standalone at 12 months versus 78.6% attached, n=14). Standalone win rate is 25.0% on 4 closed deals, versus 72.7% bundled. Self-serve paid conversion within 90 days is 19.4% with voice and 2.4% without, from 120 signups. The demand-share gap is the sensitive check. The data is synthetic. Materially higher standalone usage or demand in larger samples would change the call.",
+  "weaknesses": [
+   "Signups pay mainly when paired with voice: 19.4% with voice versus 2.4% without.",
+   "Only 12.0% of revenue is standalone usage against a 35.0% threshold.",
+   "12-month retention is 37.5% for standalone accounts (n=8) against 78.6% for Voice AI-attached."
+  ],
+  "actions": [
+   {
+    "title": "Improve self-serve onboarding and documentation",
+    "rationale": "Targets the weakness that signups pay mainly when paired with voice (19.4% with versus 2.4% without). Faster time to a first successful request may help non-voice signups reach value.",
+    "metric_to_watch": "Activation rate and paid conversion without voice (currently 2.4% within the 90-day paid window)"
+   },
+   {
+    "title": "Standalone pricing and packaging",
+    "rationale": "Targets the same gap between 19.4% with voice and 2.4% without. A lower barrier to a first paid month may help non-voice signups convert.",
+    "metric_to_watch": "Paid conversion without voice (currently 2.4%)"
+   },
+   {
+    "title": "Package it with Voice AI",
+    "rationale": "Targets the same weakness by capturing the conversion that already happens when paired with voice. It also fits the thin standalone usage share of 12.0%.",
+    "metric_to_watch": "Paid conversion when paired with voice (currently 19.4%)"
+   }
+  ]
+ }
+}

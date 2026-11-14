@@ -3,13 +3,13 @@ import copy, json
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
-from analyzer import analysis, data, extraction, memo, validation
+from analyzer import analysis, data, extraction, gtm, memo, validation
 from analyzer.config import AREAS, AREA_LABEL, SCENARIOS, load_thresholds, scenario_description, PROMPT_VERSION
 from analyzer.verdict import LABELS
 
 st.set_page_config(page_title="Portfolio Fit Analyzer", page_icon="🧭", layout="wide")
 BLUE, ORANGE, GREY, GREEN, RED = "#2563eb", "#ea580c", "#94a3b8", "#0f766e", "#b91c1c"
-PAGES = ["Verdict", "Behavioral evidence", "Pipeline evidence", "Stated vs revealed", "Assumptions", "Data and validation"]
+PAGES = ["Verdict", "Behavioral evidence", "Pipeline evidence", "Stated vs revealed", "Assumptions", "Data and validation", "Data explorer"]
 QCOLOR = {"standalone_business": GREEN, "retention_led": "#a16207", "latent_standalone": "#7c3aed", "component": "#475569", "insufficient": RED}
 
 # ---------------- thresholds in session state ----------------
@@ -69,15 +69,21 @@ if page == "Verdict":
                 st.caption(v["behavior"]["selfserve_note"])
             mm = memo.get_memo(a, x, R["thresholds"])
             st.markdown("**Memo** &nbsp; <span style='color:#64748b;font-size:0.8em'>" + mm["source"] + "</span>", unsafe_allow_html=True)
-            st.markdown(f"*{mm['headline']}*"); st.markdown(mm["memo"])
-            if mm["flagged"]: st.warning(f"Memo flagged: numbers not found in metrics {mm['unmatched_numbers']}; recommendation matches verdict: {mm['recommendation_matches_verdict']}")
+            st.markdown(f"*{mm['headline']}*"); st.markdown(mm["evidence"])
+            st.markdown("**Top areas of weakness**")
+            for i, w in enumerate(mm["weaknesses"], 1): st.markdown(f"{i}. {w}")
+            st.markdown("**Top 3 GTM actions to try**")
+            for i, ac in enumerate(mm["actions"], 1):
+                st.markdown(f"{i}. **{ac['title']}**  \n{ac['rationale']}  \n*Watch:* {ac['metric_to_watch']}")
+            st.caption("Weaknesses are ranked by shortfall against an explicit benchmark; actions by how directly they address those weaknesses. This is a prioritisation heuristic on synthetic data, not a forecast of impact.")
+            if mm["flagged"]: st.warning(f"Memo flagged: numbers not found in metrics {mm['unmatched_numbers']}; recommendation matches verdict: {mm['recommendation_matches_verdict']}; actions match plan: {mm['actions_match_plan']}")
             else: st.caption("✔ Every number in this memo was checked against the metrics object.")
     st.divider(); st.markdown("#### Where each area sits")
     fig = go.Figure()
     for a in AREAS:
         v = R["areas"][a]["verdict"]; m = R["areas"][a]["metrics"]
         fig.add_trace(go.Scatter(x=[m["behavioral"]["standalone_usage_share"] * 100], y=[(m["pipeline"].get("standalone_demand_share") or 0) * 100], mode="markers+text", text=[AREA_LABEL[a]],
-                                 textposition="top center", marker=dict(size=18, color=QCOLOR[v["key"]]), name=AREA_LABEL[a]))
+                                 textposition="top left" if a == "inference" else "bottom right", marker=dict(size=18, color=QCOLOR[v["key"]]), name=AREA_LABEL[a]))
     fig.add_vline(x=R["areas"]["inference"]["verdict"]["behavior"]["threshold_effective"] * 100, line_dash="dash", line_color=GREY, annotation_text="behavior threshold (inference, after self-serve adj.)")
     fig.add_hline(y=T["pipeline"]["standalone_demand_share_min"] * 100, line_dash="dash", line_color=GREY, annotation_text="demand threshold")
     fig.update_xaxes(title="Standalone usage share of revenue (%)", range=[0, 100]); fig.update_yaxes(title="Standalone demand share of transcripts (%)", range=[0, 60])
@@ -249,7 +255,7 @@ elif page == "Assumptions":
 - Quadrants: standalone adoption + strong pipeline = Standalone business; standalone adoption + weak pipeline = Retention-led standalone; attached + strong pipeline = Latent standalone; attached + weak pipeline = Component of Voice AI.""")
 
 # ================= 6. Data and validation =================
-else:
+elif page == "Data and validation":
     st.title("Data and validation")
     st.markdown(f"**Scenario `{scenario}`**: {scenario_description(scenario)}")
     cnt = st.columns(5)
@@ -276,3 +282,42 @@ else:
             r = h["results"]; st.markdown(f"- **{ver}**: {h['change']} Framing + raised-by: " + ", ".join(f"{s} {pct(x['framing_and_raised_by_accuracy'])}" for s, x in r.items()) + "; criteria exact: " + ", ".join(f"{s} {pct(x['fields']['decision_criteria'])}" for s, x in r.items()))
     st.markdown("#### Data sources")
     st.markdown("- **Behavioral:** `usage_monthly.csv`, `accounts.csv`: monthly usage and billing by product, with an `invoked_via` field separating Voice AI-driven from direct use.\n- **Pipeline:** `transcripts/*.md` and `opportunities.csv`: new-business calls and deal outcomes.\n- **Self-serve:** `signups.csv`: developer signups by entry product, activation and paid-in-90-days.\n- All synthetic, generated by `generator/` from a scenario file. See the README for limitations.")
+
+
+# ================= 7. Data explorer =================
+else:
+    import io, zipfile
+    st.title("Data explorer")
+    st.markdown("Everything the verdicts rest on, for both synthetic worlds: browse it here or download it. All of it is fictional and generated from the scenario files in `scenarios/` by the generator in `generator/`.")
+    @st.cache_data(show_spinner=False)
+    def bundle(s, with_key):
+        files = dict(data.scenario_files(s))
+        if with_key: files.update(validation.answer_files(s))
+        buf = io.BytesIO()
+        with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as z:
+            for name, b in files.items(): z.writestr(f"{s}/{name}", b)
+        return buf.getvalue()
+    @st.cache_data(show_spinner=False)
+    def ext_json(s): return json.dumps({k: v for k, v in extraction.load_cached(s).items()}, indent=1).encode()
+    st.markdown(f"#### Scenario `{scenario}`")
+    c = st.columns(3)
+    c[0].download_button("Download full scenario (zip: tables, transcripts)", bundle(scenario, False), f"{scenario}_synthetic_data.zip", "application/zip", width="stretch")
+    c[1].download_button("…plus the hidden answer key", bundle(scenario, True), f"{scenario}_with_answer_key.zip", "application/zip", width="stretch",
+                         help="The answer key is what the extraction validation scores against (the generator's true values).")
+    c[2].download_button("Claude's extractions (JSON, with quotes)", ext_json(scenario), f"{scenario}_extractions.json", "application/json", width="stretch")
+    st.caption("The other scenario is one switch away in the sidebar. Table descriptions are in the data dictionary below.")
+    names = {"accounts": "Accounts", "usage_monthly": "Monthly usage and billing", "opportunities": "Opportunities", "signups": "Self-serve signups"}
+    tabs = st.tabs(list(names.values()) + ["Transcripts", "Data dictionary"])
+    for tab, (key, label) in zip(tabs, names.items()):
+        with tab:
+            df = tables[key].drop(columns=["m"], errors="ignore")
+            st.caption(f"{len(df):,} rows × {len(df.columns)} columns")
+            st.dataframe(df, hide_index=True, width="stretch", height=420)
+            st.download_button(f"Download {key}.csv", df.to_csv(index=False).encode(), f"{scenario}_{key}.csv", "text/csv", key=f"dl_{key}_{scenario}")
+    with tabs[4]:
+        trs = data.transcripts(scenario)
+        oid = st.selectbox("Transcript", list(trs), key=f"tx_{scenario}")
+        st.download_button("Download this transcript (.md)", trs[oid].encode(), f"{scenario}_{oid}.md", "text/markdown", key=f"dltx_{scenario}")
+        st.markdown(trs[oid])
+    with tabs[5]:
+        st.markdown((data.DATA_README).read_text() if hasattr(data, "DATA_README") else "")

@@ -18,7 +18,7 @@ Two synthetic worlds ship with it: **`component`** (Inference and Edge are pulle
 ```bash
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/streamlit run app.py            # no API key needed: all LLM outputs are cached and committed
-.venv/bin/python -m pytest -q tests       # 17 unit and integration tests
+.venv/bin/python -m pytest -q tests       # 25 unit and integration tests
 ```
 Agent/CLI access (JSON on stdout):
 ```bash
@@ -27,13 +27,15 @@ Agent/CLI access (JSON on stdout):
 .venv/bin/python -m analyzer validate --scenario component      # extraction accuracy vs the hidden answer key
 .venv/bin/python -m analyzer extract --scenario component       # re-extract (Claude is only called on cache misses)
 ```
+Pages: Verdict, Behavioral evidence, Pipeline evidence, Stated vs revealed, Assumptions, Data and validation, and **Data explorer**.
+
 Layout: `analyzer/` is a pure-function package (metrics, verdict, extraction, validation, memo, CLI); `app.py` only renders; `analyzer/thresholds.yaml` holds every threshold; `analyzer/cache/` holds the committed LLM outputs; `data/` and `generator/` are from Prompt 1.
 
 ## How AI is used
 All three uses are Claude through the Anthropic Python SDK (key from `ANTHROPIC_API_KEY`, model from `CLAUDE_MODEL`, default **`claude-sonnet-5-5`**; a `.env` at the repo root overrides a stale shell key). Outputs are cached on disk keyed by sha256 of input, model, prompt version and schema, and **committed for both scenarios**, so the demo runs instantly without a key. If you set a different `CLAUDE_MODEL`, the cache will miss; unset it to use the committed outputs.
 1. **Transcript extraction (100 transcripts).** One tool whose input schema is the extraction schema (strict tool use, not free-text parsing). Fields: primary interest, use case, inference framing and who raised it, the same two for Edge, competitors per area, decision criteria, and the single biggest stated concern. Each field carries a **verbatim supporting quote** and a **confidence**; absent evidence returns `not_mentioned`. The app checks that every quote actually appears in the transcript.
 2. **Validation against ground truth.** `analyzer/validation.py` is the only code that reads the generator's answer key (a test enforces this). Results below and on the app's *Data and validation* page.
-3. **Verdict memo.** Claude writes a short memo per area from a FACTS object computed by code; it may cite only numbers in that object. A programmatic check confirms every number in the memo matches the facts (and that the recommendation equals the verdict), and flags the memo if not. Memos are cached for the default thresholds; when you move a slider the app falls back to a deterministic template memo and labels it as such.
+3. **Verdict memo.** Claude writes a short memo per area from a FACTS object computed by code: an evidence summary, the top three funnel weaknesses and the top three GTM actions (see below). It may cite only numbers in that object. Programmatic checks confirm every number in the memo matches the facts, the recommendation equals the verdict, and the three actions are exactly the ones the code ranked; the memo is flagged if any check fails. Memos are cached for the default thresholds; when you move a slider the app falls back to a deterministic template memo and labels it as such.
 
 Everything else (metrics, quadrants, thresholds) is deterministic code, not an LLM.
 
@@ -50,6 +52,13 @@ Two axes, thresholds in `analyzer/thresholds.yaml`, all exposed as sliders on th
 - **Pipeline axis:** strong only if all of: standalone demand share of transcripts at least 15%; at least 50% of standalone mentions raised by the buyer; standalone win rate at least 25%. The buyer-raised test guards against rep framing bias.
 - **Evidence floor (default 8):** fewer than 8 transcripts discussing the product, fewer than 8 accounts using it, or fewer than 8 closed standalone deals when a win rate is needed yields **"Insufficient evidence"** instead of a quadrant.
 - Every check is shown with its gap ("Standalone win rate is 4.0 pts below the threshold"), and inputs within 5 points of a line are flagged as sensitive.
+
+## Weaknesses and GTM actions
+Instead of a generic next step, each area's card lists where the funnel is weakest and the three GTM actions most likely to help (`analyzer/gtm.py`, deterministic):
+- **Weaknesses** are ranked by *severity*: the relative shortfall against an explicit benchmark. Checked stages: top of funnel (signups versus the average entry product), activation (versus all signups), paid conversion within 90 days (without voice, and voice dependence), standalone usage share (versus the verdict threshold), 12-month retention (versus attached), standalone demand and buyer-initiated share (versus thresholds), win rate (versus the bundled win rate), and the concerns voiced on lost deals. Win rate and retention are down-weighted when the sample is below the minimum. The top three come from distinct funnel stages.
+- **Actions** come from a fixed library: paid and content demand feeding self-serve; self-serve onboarding and documentation; packaging with Voice AI; standalone pricing and packaging; competitive positioning and a product-gap plan; buyer-led demand generation for non-voice workloads; sales enablement for standalone deals; customer success and expansion; data-residency and compliance packaging. Each action's score is the sum over weaknesses of *severity x how directly the action addresses it*; the top three are shown with a "metric to watch".
+- With insufficient evidence the three actions are evidence-gathering steps instead.
+- **This is a prioritisation heuristic, not a forecast.** The action library and the weights are editable assumptions in `gtm.py`, and no impact numbers are claimed.
 
 ## Results (committed scenarios)
 | Scenario | AI Inference | Edge Compute |
@@ -76,6 +85,9 @@ Scored against the hidden answer key (exact match unless noted; 50 transcripts p
 | Quotes found verbatim in the transcript | 100% | 96% |
 
 **Prompt iterations** (`analyzer/cache/prompt_history.json`): *v1* (initial) already cleared the 85% target on framing and raised-by (100% / 97.5%), so those were left alone. v1's decision-criteria exact-match was 12% / 8%: the extractor labelled routine logistics ("we'd need a security review", asking how pricing works) as criteria (recall was near perfect; precision was the problem). *v2* tightened that definition: criteria exact match rose to 50% / 48% (Jaccard about 0.85). One honest correction: my first scoring run showed 68% on raised-by, which was a bug in the validator (pandas read the truth value `n/a` as missing), fixed before any prompt change.
+
+## Direct access to the data
+The **Data explorer** page lets anyone inspect and download exactly what the verdicts rest on, for whichever scenario is selected: a zip of all tables and the 50 transcripts; the same zip plus the hidden answer key; Claude's extractions as JSON (with quotes and confidence); each table as CSV with an on-screen preview; a transcript reader; and the data dictionary. The same files are in the repo under `data/<scenario>/`. Regenerating from the scenario files is a single command (`python -m generator --all`, see `data/README.md`).
 
 ## Known limitations
 - **Synthetic data, by design.** The verdicts demonstrate the method on worlds built to have a known answer; they say nothing about real Telnyx customers. Extraction was validated against transcripts written by an LLM from a brief, which is easier than real calls (cleaner speech, explicit statements). Real-world accuracy will be lower.

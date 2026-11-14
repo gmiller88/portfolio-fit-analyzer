@@ -1,0 +1,128 @@
+{
+ "area": "inference",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "m2",
+ "facts": {
+  "area": "AI Inference",
+  "verdict": {
+   "quadrant": "Component of Voice AI",
+   "recommendation": "invest_as_voice_ai_component"
+  },
+  "behavioral": {
+   "accounts_using": 129,
+   "adoption_pct": 32.2,
+   "standalone_usage_share_pct": 10.0,
+   "standalone_threshold_effective_pct": 35.0,
+   "standalone_accounts": 17,
+   "attached_accounts": 111,
+   "retention_12m_standalone_pct": 45.5,
+   "retention_12m_standalone_n": 11,
+   "retention_12m_attached_pct": 72.4,
+   "retention_12m_attached_n": 29,
+   "gross_margin_standalone_pct": 30.1,
+   "gross_margin_attached_pct": 30.0,
+   "median_months_to_attach": 2
+  },
+  "pipeline": {
+   "transcripts": 50,
+   "mentioning": 19,
+   "standalone_framed": 5,
+   "standalone_demand_share_pct": 10.0,
+   "buyer_initiated_share_of_standalone_pct": 20.0,
+   "standalone_closed_deals": 4,
+   "standalone_win_rate_pct": 25.0,
+   "bundled_win_rate_pct": 71.4,
+   "top_loss_concerns": [
+    "price",
+    "model_breadth",
+    "maturity"
+   ],
+   "top_competitors": [
+    "Together AI",
+    "OpenAI",
+    "Baseten"
+   ]
+  },
+  "selfserve": {
+   "signups": 180,
+   "paid_90d_rate_without_voice_pct": 2.4,
+   "paid_90d_rate_with_voice_pct": 20.4
+  },
+  "stated_vs_revealed": {
+   "won_accounts_stated_standalone": 1,
+   "mostly_voice_ai_share_pct": 100.0
+  },
+  "thresholds": {
+   "min_sample": 8,
+   "behavior_standalone_usage_share_min_pct": 30.0,
+   "standalone_demand_share_min_pct": 15.0,
+   "buyer_initiated_share_min_pct": 50.0,
+   "standalone_win_rate_min_pct": 25.0
+  },
+  "checks": [
+   "Standalone usage share (revenue) is 25.0 pts below the threshold (10.0% vs 35.0%)",
+   "Standalone demand share is 5.0 pts below the threshold (10.0% vs 15.0%)"
+  ],
+  "sensitive": [
+   "Standalone demand share is 5.0 pts below the threshold (10.0% vs 15.0%)"
+  ],
+  "selfserve_note": "Self-serve signups convert mainly when paired with voice (20.4% with vs 2.4% without), so the threshold is raised by 5 pts.",
+  "insufficient_reason": null,
+  "gtm": {
+   "weaknesses": [
+    "Signups pay mainly when paired with voice: 20.4% with voice versus 2.4% without.",
+    "Only 10.0% of revenue is standalone usage against a 35.0% threshold.",
+    "Only 20.0% of standalone mentions were raised by the buyer; reps are creating most of the standalone conversation."
+   ],
+   "actions": [
+    {
+     "title": "Standalone pricing and packaging",
+     "what": "Free tier or starter credits, price matching on the most-used models, and commit discounts to lower the barrier to a first paid month.",
+     "targets": "Signups pay mainly when paired with voice: 20.4% with voice versus 2.4% without. Paid conversion within 90 days without voice is 2.4% against 9.6% for all signups.",
+     "metric_to_watch": "Paid conversion without voice"
+    },
+    {
+     "title": "Improve self-serve onboarding and documentation",
+     "what": "Quickstarts, sample apps and a sandbox that reach a first successful call or request in minutes, plus lifecycle nudges after signup.",
+     "targets": "Signups pay mainly when paired with voice: 20.4% with voice versus 2.4% without. Paid conversion within 90 days without voice is 2.4% against 9.6% for all signups.",
+     "metric_to_watch": "Activation rate and paid conversion without voice"
+    },
+    {
+     "title": "Package it with Voice AI",
+     "what": "A starter bundle and in-product prompts that add it to a voice agent, capturing the conversion that already happens when it is paired with voice.",
+     "targets": "Signups pay mainly when paired with voice: 20.4% with voice versus 2.4% without. Paid conversion within 90 days without voice is 2.4% against 9.6% for all signups.",
+     "metric_to_watch": "Paid conversion when paired with voice"
+    }
+   ]
+  },
+  "retention_window_months": 12,
+  "paid_window_days": 90
+ },
+ "memo": {
+  "recommendation": "invest_as_voice_ai_component",
+  "headline": "AI Inference looks like a Voice AI component, not a standalone category, based on synthetic data and small samples.",
+  "evidence": "Standalone usage is 10.0% of revenue against a 35.0% effective threshold, and standalone demand share is 10.0% against 15.0%. That demand gap is the sensitive check. Standalone accounts are 17 of 129 using. Twelve-month retention is 45.5% standalone (n=11) versus 72.4% attached (n=29), both small samples. Standalone win rate is 25.0% (4 closed deals) versus 71.4% bundled. Self-serve paid conversion within the 90-day window is 2.4% without voice versus 20.4% with it. Larger samples showing standalone demand above its threshold would change the call. The data is synthetic.",
+  "weaknesses": [
+   "Signups pay mainly when paired with voice: 20.4% with voice versus 2.4% without.",
+   "Only 10.0% of revenue is standalone usage against a 35.0% threshold.",
+   "Only 20.0% of standalone mentions were raised by the buyer; reps are creating most of the standalone conversation."
+  ],
+  "actions": [
+   {
+    "title": "Standalone pricing and packaging",
+    "rationale": "This targets the weak non-voice conversion (2.4% without voice versus 20.4% with). A free tier, starter credits and commit discounts could lower the barrier to a first paid month, though no outcome is assured.",
+    "metric_to_watch": "Paid conversion without voice (currently 2.4% within the 90-day window)"
+   },
+   {
+    "title": "Improve self-serve onboarding and documentation",
+    "rationale": "This also targets the gap between 2.4% without voice and 20.4% with voice. Quickstarts, a sandbox and lifecycle nudges could help non-voice signups reach a first success and then pay.",
+    "metric_to_watch": "Activation rate and paid conversion without voice (currently 2.4%)"
+   },
+   {
+    "title": "Package it with Voice AI",
+    "rationale": "This works with the conversion that already happens when inference is paired with voice (20.4%), rather than against the weak standalone pull behind the 10.0% standalone revenue share. A starter bundle and in-product prompts would capture it.",
+    "metric_to_watch": "Paid conversion when paired with voice (currently 20.4%)"
+   }
+  ]
+ }
+}

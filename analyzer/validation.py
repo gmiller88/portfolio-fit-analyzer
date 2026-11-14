@@ -36,3 +36,9 @@ def validate(scenario, extractions):
     return {"scenario": scenario, "n_transcripts": len(rows), "fields": summ, "framing_and_raised_by_accuracy": sum(framing) / len(framing) if framing else None,
             "quote_grounding_rate": sum(r["grounded"] for r in rows) / len(rows) if rows else None,
             "errors": [{"opp_id": r["opp_id"], "field": k, "extracted": r[k][1], "truth": r[k][2]} for r in rows for k in fields if k in r and not r[k][0]]}
+
+
+def answer_files(scenario):
+    """The generator's answer key as {zip-relative path: bytes}, for the data download. Kept here so only this module reads it."""
+    d = scenario_dir(scenario) / "ground_truth"
+    return {f"ground_truth/{p.name}": p.read_bytes() for p in sorted(d.glob("*")) if p.is_file()}
