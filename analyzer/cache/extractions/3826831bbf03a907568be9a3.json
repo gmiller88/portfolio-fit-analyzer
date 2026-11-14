@@ -1,0 +1,70 @@
+{
+ "opp_id": "OPP-0012",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "Garo Fleet wants voice AI agents that make outbound calls to qualify leads",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_outbound_qualification",
+   "quote": "the agent calls, confirms the shipment lanes, volumes, and timing, and then hands off the qualified ones",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "bundled_with_voice",
+   "quote": "that logic can run as an edge function on Telnyx, so it executes near the call instead of somewhere distant.",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "rep",
+   "quote": "that logic can run as an edge function on Telnyx, so it executes near the call instead of somewhere distant.",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [
+    "Cloudflare Workers",
+    "Fastly"
+   ],
+   "quote": "We've looked at Cloudflare Workers and Fastly for that kind of thing, honestly.",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "latency",
+    "voice_quality",
+    "reliability"
+   ],
+   "quote": "if the round trip drifts, the whole call feels robotic.",
+   "confidence": "medium"
+  },
+  "stated_reason": {
+   "value": "latency",
+   "quote": "We think in time to first token and round-trip time. I'd want to see that.",
+   "confidence": "medium"
+  }
+ }
+}

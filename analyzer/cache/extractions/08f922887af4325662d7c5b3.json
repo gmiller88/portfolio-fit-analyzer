@@ -1,0 +1,68 @@
+{
+ "opp_id": "OPP-0006",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "we're looking at a voice AI support agent.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_support_agent",
+   "quote": "we're looking at a voice AI support agent. Tenants, buyers, people calling about viewings, that sort of thing.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "bundled_with_voice",
+   "quote": "Both are available through our inference API, and you'd use them inside the voice agent.",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "buyer",
+   "quote": "the LLM side, we obviously need something behind the agent.",
+   "confidence": "medium"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [
+    "Together AI"
+   ],
+   "quote": "We've been looking at Together AI for that, just to compare.",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "latency",
+    "maturity"
+   ],
+   "quote": "We're saying time to first token around 500 milliseconds, that's the target.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "maturity",
+   "quote": "we've got to feel it's proven. Like, running real production AI workloads, not a science project.",
+   "confidence": "medium"
+  }
+ }
+}

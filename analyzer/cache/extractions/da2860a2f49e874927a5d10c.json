@@ -1,0 +1,73 @@
+{
+ "opp_id": "OPP-0032",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "my notes say you wanted to talk about voice AI agents, specifically for appointment booking",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_appointment_booking",
+   "quote": "students and, um, enterprise training clients need to book sessions, and right now it's a lot of manual back and forth. We'd like something that handles that over the phone.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "bundled_with_voice",
+   "quote": "the functions that glue the conversation to your systems sit in the same platform as the voice agent",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "rep",
+   "quote": "we'd recommend running it on Telnyx Edge Compute, close to the call.",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [
+    "Cloudflare Workers",
+    "Fastly"
+   ],
+   "quote": "Our engineers mentioned Cloudflare Workers, I think. And maybe Fastly.",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Vapi"
+   ],
+   "quote": "We've been looking at Vapi.",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "voice_quality",
+    "reliability",
+    "cost_predictability",
+    "support_quality"
+   ],
+   "quote": "We can't have surprise bills. Finance gets very unhappy.",
+   "confidence": "medium"
+  },
+  "stated_reason": {
+   "value": "none_stated",
+   "quote": "",
+   "confidence": "medium"
+  }
+ }
+}

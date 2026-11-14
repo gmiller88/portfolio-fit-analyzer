@@ -1,0 +1,70 @@
+{
+ "opp_id": "OPP-0048",
+ "scenario": "latent_standalone",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "a voice AI support agent that can handle order status and returns calls.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_support_agent",
+   "quote": "a voice AI support agent that can handle order status and returns calls.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "medium"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "medium"
+  },
+  "edge_framing": {
+   "value": "bundled_with_voice",
+   "quote": "For you it's a component of the agent.",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "buyer",
+   "quote": "Our engineers have been prototyping the tool-calling logic on Cloudflare Workers.",
+   "confidence": "medium"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [
+    "Cloudflare Workers"
+   ],
+   "quote": "Our engineers have been prototyping the tool-calling logic on Cloudflare Workers.",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "compliance",
+    "cost_predictability",
+    "support_quality",
+    "integration_effort"
+   ],
+   "quote": "We have customers in India, and we need that data to stay in-region. We'd need a DPA too.",
+   "confidence": "medium"
+  },
+  "stated_reason": {
+   "value": "compliance",
+   "quote": "Now, the big one for us. We have customers in India, and we need that data to stay in-region.",
+   "confidence": "high"
+  }
+ }
+}

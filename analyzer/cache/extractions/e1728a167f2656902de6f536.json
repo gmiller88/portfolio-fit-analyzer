@@ -1,0 +1,71 @@
+{
+ "opp_id": "OPP-0041",
+ "scenario": "latent_standalone",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "inference",
+   "quote": "the first thing I want to talk about is inference. We're building an LLM backend for some internal tooling",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "llm_api_backend",
+   "quote": "We're building an LLM backend for some internal tooling, dispatch summaries, exception handling, that kind of thing. It lives in our own application, nothing to do with voice.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "standalone",
+   "quote": "that's a fully separate thing you can buy by itself",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "buyer",
+   "quote": "the first thing I want to talk about is inference.",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [
+    "Fireworks"
+   ],
+   "quote": "We're looking at Fireworks right now. Their quote came in around ninety-three cents per million tokens.",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Twilio"
+   ],
+   "quote": "We're on Twilio today for driver and customer calls.",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "model_breadth",
+    "cost_predictability",
+    "price"
+   ],
+   "quote": "breadth of selection matters a lot to me.",
+   "confidence": "medium"
+  },
+  "stated_reason": {
+   "value": "model_breadth",
+   "quote": "I don't want to be locked in. We'll probably want to swap between several open models as things shift, so breadth of selection matters a lot to me.",
+   "confidence": "medium"
+  }
+ }
+}

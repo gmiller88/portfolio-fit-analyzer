@@ -1,0 +1,69 @@
+{
+ "opp_id": "OPP-0047",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "We want a voice AI support agent for students and parents.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_support_agent",
+   "quote": "We want a voice AI support agent for students and parents.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "medium"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "medium"
+  },
+  "edge_framing": {
+   "value": "bundled_with_voice",
+   "quote": "I don't need it as its own thing, I just need the agent to work. If it's part of the agent setup, fine.",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "buyer",
+   "quote": "We've been prototyping some of the logic on Cloudflare Workers, little functions that look up a student record and come back with an answer.",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "medium"
+  },
+  "competitors_edge": {
+   "value": [
+    "Cloudflare Workers"
+   ],
+   "quote": "We've been prototyping some of the logic on Cloudflare Workers",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [],
+   "quote": "",
+   "confidence": "medium"
+  },
+  "decision_criteria": {
+   "value": [
+    "single_vendor",
+    "maturity",
+    "voice_quality"
+   ],
+   "quote": "we'd like to consolidate with the cloud and AI vendor we already have, just fewer contracts and fewer dashboards.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "single_vendor",
+   "quote": "we'd like to consolidate with the cloud and AI vendor we already have, just fewer contracts and fewer dashboards.",
+   "confidence": "high"
+  }
+ }
+}

@@ -1,0 +1,72 @@
+{
+ "opp_id": "OPP-0022",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "my understanding is you're looking at voice AI agents for outbound qualification.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_outbound_qualification",
+   "quote": "We want AI agents to make the first call, ask five or six qualifying questions, and hand the good ones to a human.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "bundled_with_voice",
+   "quote": "With our Voice AI agents, the function execution is part of the agent itself.",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "buyer",
+   "quote": "the code that calls our CRM to look up the lead and write the result back. For that last piece we've been prototyping with AWS Lambda.",
+   "confidence": "medium"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [
+    "AWS Lambda"
+   ],
+   "quote": "we've been prototyping with AWS Lambda",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Sinch"
+   ],
+   "quote": "We're using Sinch for our SMS and some voice right now.",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "single_vendor",
+    "cost_predictability",
+    "integration_effort",
+    "price"
+   ],
+   "quote": "our cloud team's first instinct is to stay with Amazon for everything. One vendor, one bill, one set of contracts.",
+   "confidence": "medium"
+  },
+  "stated_reason": {
+   "value": "single_vendor",
+   "quote": "I'm not going to pretend the preference for staying in one place isn't strong.",
+   "confidence": "high"
+  }
+ }
+}

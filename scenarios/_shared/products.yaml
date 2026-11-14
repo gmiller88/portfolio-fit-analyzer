@@ -1,0 +1,20 @@
+# SYNTHETIC. Illustrative unit prices and margins, NOT Telnyx list prices.
+segment_scale:        # multiplier on base_monthly_units (smb = 1.0)
+  self_serve: 0.08
+  smb: 1.0
+  mid_market: 6.0
+  enterprise: 30.0
+products:
+  voice_api:       {area: communications, unit: minute,        unit_price: 0.0070, gross_margin: 0.50, base_monthly_units: 40000}
+  sip_trunking:    {area: communications, unit: minute,        unit_price: 0.0040, gross_margin: 0.55, base_monthly_units: 60000}
+  messaging:       {area: communications, unit: message,       unit_price: 0.0040, gross_margin: 0.42, base_monthly_units: 30000}
+  numbers:         {area: communications, unit: number_month,  unit_price: 1.0000, gross_margin: 0.70, base_monthly_units: 40}
+  voice_ai_agents: {area: communications, unit: agent_minute,  unit_price: 0.0600, gross_margin: 0.48, base_monthly_units: 6000}
+  inference:       {area: ai_inference,   unit: million_tokens, unit_price: 0.80,  gross_margin: 0.30, base_monthly_units: 300}   # GPU-heavy: lowest margin
+  edge_compute:    {area: edge_compute,   unit: vcpu_hour,     unit_price: 0.0450, gross_margin: 0.55, base_monthly_units: 3000}
+  cloud_storage:   {area: developer_infrastructure, unit: gb_month, unit_price: 0.0060, gross_margin: 0.65, base_monthly_units: 20000}
+  networking:      {area: developer_infrastructure, unit: gb_transferred, unit_price: 0.0200, gross_margin: 0.60, base_monthly_units: 5000}
+# Units of Inference / Edge consumed per Voice AI agent-minute when invoked by a voice agent
+voice_pull_units_per_agent_minute:
+  inference: 0.0145
+  edge_compute: 0.05

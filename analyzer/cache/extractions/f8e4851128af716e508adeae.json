@@ -1,0 +1,72 @@
+{
+ "opp_id": "OPP-0068",
+ "scenario": "latent_standalone",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "you're building a voice AI support agent at Nuvi Labs",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_support_agent",
+   "quote": "we want voice agents to take first-line support calls.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "bundled_with_voice",
+   "quote": "I'm not looking for a standalone inference product, to be clear. It matters only as the engine for the agent.",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "rep",
+   "quote": "Which brings me to something I'd push on a bit. The LLM. Where are you planning to run it?",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [
+    "Together AI",
+    "Baseten"
+   ],
+   "quote": "We've been looking at Together AI and Baseten for hosting.",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Twilio"
+   ],
+   "quote": "We're on Twilio right now for our existing support line.",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "price",
+    "maturity",
+    "single_vendor"
+   ],
+   "quote": "the other thing I worry about is whether this is proven.",
+   "confidence": "medium"
+  },
+  "stated_reason": {
+   "value": "maturity",
+   "quote": "the other thing I worry about is whether this is proven. We're an ML team, we don't want to be the first ones running a big AI voice workload on a platform.",
+   "confidence": "high"
+  }
+ }
+}

@@ -1,0 +1,70 @@
+{
+ "opp_id": "OPP-0080",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "we're planning eight voice agents, all handling inbound support.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_support_agent",
+   "quote": "we're planning eight voice agents, all handling inbound support.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "bundled_with_voice",
+   "quote": "the functions that your agent calls mid-conversation, like looking up an order or creating a ticket, can run on our side, right next to the voice agent.",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "rep",
+   "quote": "Telnyx has edge compute, so the functions that your agent calls mid-conversation",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [
+    "Cloudflare Workers"
+   ],
+   "quote": "we've been prototyping that layer on Cloudflare Workers.",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "integration_effort",
+    "single_vendor",
+    "maturity",
+    "support_quality"
+   ],
+   "quote": "Fewer moving parts does matter to me.",
+   "confidence": "medium"
+  },
+  "stated_reason": {
+   "value": "maturity",
+   "quote": "I need to know you've actually run AI workloads like this at real scale, not just demos.",
+   "confidence": "medium"
+  }
+ }
+}

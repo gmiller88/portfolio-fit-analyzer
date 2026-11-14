@@ -1,0 +1,71 @@
+{
+ "opp_id": "OPP-0036",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "We want to replace it with voice agents that handle the first part of the call, then hand off to a human when needed.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_ivr_replacement",
+   "quote": "Right now our support line runs on a classic menu-tree IVR.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Twilio",
+    "Sinch"
+   ],
+   "quote": "we run on Twilio today for the existing IVR. We've also been looking at Sinch",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "cost_predictability",
+    "price",
+    "voice_quality",
+    "support_quality"
+   ],
+   "quote": "First, cost predictability. We got burned once, not on voice specifically, but a usage bill came in way higher than forecast",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "price",
+   "quote": "Price overall matters too, per-minute especially, and the total once everything's added up.",
+   "confidence": "medium"
+  }
+ }
+}

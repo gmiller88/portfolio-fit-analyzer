@@ -1,0 +1,68 @@
+{
+ "opp_id": "OPP-0023",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "We want to replace it with voice AI agents that actually understand what someone is asking and either resolve it or hand off cleanly.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_ivr_replacement",
+   "quote": "we have a classic IVR. Press one for dispatch, press two for driver check-in, all of that.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "bundled_with_voice",
+   "quote": "It's part of making the agent work, not a product you'd shop for separately.",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "buyer",
+   "quote": "I'm trying to understand whether that stays separate or whether there's a Telnyx piece for running that code.",
+   "confidence": "medium"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [
+    "AWS Lambda"
+   ],
+   "quote": "We've been prototyping the logic behind those actions in AWS Lambda",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "reliability",
+    "support_quality"
+   ],
+   "quote": "the thing that keeps me up at night is reliability.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "none_stated",
+   "quote": "",
+   "confidence": "medium"
+  }
+ }
+}

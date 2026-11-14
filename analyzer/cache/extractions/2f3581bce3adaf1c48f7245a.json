@@ -1,0 +1,70 @@
+{
+ "opp_id": "OPP-0041",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "I know you wanted to talk about voice AI agents for replacing your IVR",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_ivr_replacement",
+   "quote": "we have the old phone tree, you know, press one for leasing, press two for maintenance, all that.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "standalone",
+   "quote": "You can buy it on its own, and it doesn't depend on our voice product.",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "rep",
+   "quote": "Separate from the voice agents, we also offer hosted LLM inference through an API.",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [
+    "Baseten",
+    "Together AI"
+   ],
+   "quote": "Baseten and Together AI, mostly.",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "model_breadth",
+    "price",
+    "maturity"
+   ],
+   "quote": "So a wide selection matters. I don't want to be stuck with two or three.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "price",
+   "quote": "One of them came in around fifty-six cents per million tokens. I saw your number was higher, like seventy-eight? So, yeah, that's a gap.",
+   "confidence": "high"
+  }
+ }
+}

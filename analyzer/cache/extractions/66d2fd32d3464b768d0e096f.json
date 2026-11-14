@@ -1,0 +1,71 @@
+{
+ "opp_id": "OPP-0020",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "inference",
+   "quote": "The main reason I asked for this call is inference.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "batch_document_processing",
+   "quote": "We have a big backlog of documents: contracts, network service orders, and a lot of scanned vendor paperwork. We want to run it through an LLM in batch.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "standalone",
+   "quote": "That lives in our own pipeline. It's not tied to any voice thing. I'd be buying it as just an API.",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "buyer",
+   "quote": "The main reason I asked for this call is inference.",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [
+    "OpenAI"
+   ],
+   "quote": "We've been using OpenAI direct for prototyping, and we're comparing it against hosted open models.",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Vonage",
+    "Vapi"
+   ],
+   "quote": "We're on Vonage today for telephony, and we've been playing with Vapi for the agent layer.",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "price",
+    "support_quality"
+   ],
+   "quote": "One of the quotes I got comes to about sixty-four cents per million tokens. Yours came back at about sixty-nine.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "price",
+   "quote": "So that's a gap, and at nine hundred million a month I have to be able to explain it to finance.",
+   "confidence": "high"
+  }
+ }
+}

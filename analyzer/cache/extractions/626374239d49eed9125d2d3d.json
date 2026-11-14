@@ -1,0 +1,70 @@
+{
+ "opp_id": "OPP-0030",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "edge_compute",
+   "quote": "So, we're looking at edge compute, basically. Running some logic closer to where our users are.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "edge_functions_routing",
+   "quote": "Mostly routing. Edge functions that decide where a request goes, you know, depending on a few things.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "standalone",
+   "quote": "We'd want to buy it on its own, through an API, not tied to anything else.",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "buyer",
+   "quote": "So, we're looking at edge compute, basically.",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [
+    "AWS Lambda",
+    "Cloudflare Workers"
+   ],
+   "quote": "We've used AWS Lambda for some things. And Cloudflare Workers is on the list, we've been poking at it.",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "latency",
+    "integration_effort",
+    "support_quality"
+   ],
+   "quote": "We have a target of 50 ms at p95 for the edge piece.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "latency",
+   "quote": "Yes, latency matters. We have a target of 50 ms at p95 for the edge piece.",
+   "confidence": "medium"
+  }
+ }
+}

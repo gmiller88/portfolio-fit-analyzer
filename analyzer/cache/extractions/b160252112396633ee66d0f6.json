@@ -1,0 +1,68 @@
+{
+ "opp_id": "OPP-0066",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "numbers",
+   "quote": "So, numbers, right. We've got a bunch of them. Phone numbers, I mean.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "number_porting_migration",
+   "quote": "Spread around a few places, and we're, you know, looking at moving things at some point.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "reliability",
+    "maturity",
+    "single_vendor",
+    "support_quality"
+   ],
+   "quote": "we already have a cloud provider and an AI vendor we work with. So there's a natural pull to keep things together. Fewer vendors, fewer headaches.",
+   "confidence": "medium"
+  },
+  "stated_reason": {
+   "value": "single_vendor",
+   "quote": "there's a natural pull to keep things together. Fewer vendors, fewer headaches.",
+   "confidence": "high"
+  }
+ }
+}

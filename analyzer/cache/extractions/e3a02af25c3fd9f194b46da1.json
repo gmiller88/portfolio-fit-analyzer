@@ -1,0 +1,72 @@
+{
+ "opp_id": "OPP-0064",
+ "scenario": "latent_standalone",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "inference",
+   "quote": "I know the original thread was about voice, but I'd like to start with inference, if that's alright.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "batch_document_processing",
+   "quote": "we process a lot of claims paperwork. Policy documents, adjuster notes, scanned forms after OCR. It's all batch, runs overnight in our own pipeline.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "standalone",
+   "quote": "Exactly. We'd buy it standalone.",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "buyer",
+   "quote": "I'd like to start with inference, if that's alright.",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [
+    "Together AI"
+   ],
+   "quote": "Right now we're evaluating Together AI for it.",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Vonage"
+   ],
+   "quote": "Today we're on Vonage for telephony, and we're looking at alternatives.",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "model_breadth",
+    "maturity",
+    "price",
+    "cost_predictability"
+   ],
+   "quote": "my worry is how proven you are for production AI workloads.",
+   "confidence": "medium"
+  },
+  "stated_reason": {
+   "value": "maturity",
+   "quote": "my worry is how proven you are for production AI workloads. Telnyx is known for telephony. Together AI is known for inference.",
+   "confidence": "high"
+  }
+ }
+}

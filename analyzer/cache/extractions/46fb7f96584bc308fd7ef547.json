@@ -1,0 +1,69 @@
+{
+ "opp_id": "OPP-0009",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "you're looking at voice AI agents for appointment booking",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_appointment_booking",
+   "quote": "We want a voice agent that answers the phone, finds a slot, books it, and confirms.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "bundled_with_voice",
+   "quote": "With a Telnyx voice agent, the tool calls, like \"check availability\" or \"create booking,\" are part of the agent setup. The functions can run on our edge, near the call",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "buyer",
+   "quote": "that's actually where edge comes in. We've been looking at Fastly for running the functions that check availability and write the booking",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [
+    "Fastly"
+   ],
+   "quote": "We've been looking at Fastly for running the functions that check availability and write the booking, close to the caller.",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "latency",
+    "reliability",
+    "voice_quality"
+   ],
+   "quote": "First, latency. If the agent pauses too long, people talk over it and the whole thing falls apart.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "latency",
+   "quote": "First, latency. If the agent pauses too long, people talk over it and the whole thing falls apart.",
+   "confidence": "medium"
+  }
+ }
+}

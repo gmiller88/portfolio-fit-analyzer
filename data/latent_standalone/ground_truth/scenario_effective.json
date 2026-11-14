@@ -1,0 +1,186 @@
+{
+  "scenario": "latent_standalone",
+  "seed": 2202,
+  "SYNTHETIC": true,
+  "counts": {
+    "accounts": 400,
+    "usage_rows": 8804,
+    "opportunities": 80,
+    "transcripts": 50,
+    "signups": 1500,
+    "prospects_never_won": 40,
+    "accounts_by_entry_product": {
+      "messaging": 55,
+      "inference": 64,
+      "sip_trunking": 44,
+      "voice_api": 114,
+      "cloud_storage": 25,
+      "networking": 18,
+      "numbers": 24,
+      "voice_ai_agents": 41,
+      "edge_compute": 15
+    },
+    "accounts_by_channel": {
+      "sales_led": 242,
+      "self_serve": 158
+    }
+  },
+  "opportunity_level": {
+    "inference": {
+      "n": 80,
+      "standalone_demand_share": 0.25,
+      "bundled_mention_share": 0.2,
+      "n_mentioning": 36,
+      "buyer_initiated_share": 0.75,
+      "n_standalone": 20,
+      "standalone_win_rate": 0.3333,
+      "n_standalone_closed": 18,
+      "bundled_win_rate": 0.6667,
+      "loss_reason_shares": {
+        "model_breadth": 0.4167,
+        "maturity": 0.0833,
+        "latency": 0.0833,
+        "price": 0.3333,
+        "compliance": 0.0833
+      },
+      "n_standalone_lost": 12,
+      "competitor_shares": {
+        "Fireworks": 0.3056,
+        "OpenAI direct": 0.1944,
+        "Baseten": 0.1389,
+        "Together AI": 0.3611
+      },
+      "n_competitor_mentions": 36
+    },
+    "edge_compute": {
+      "n": 80,
+      "standalone_demand_share": 0.1,
+      "bundled_mention_share": 0.2375,
+      "n_mentioning": 27,
+      "buyer_initiated_share": 0.375,
+      "n_standalone": 8,
+      "standalone_win_rate": 0.1429,
+      "n_standalone_closed": 7,
+      "bundled_win_rate": 0.7222,
+      "loss_reason_shares": {
+        "maturity": 0.3333,
+        "price": 0.3333,
+        "latency": 0.3333
+      },
+      "n_standalone_lost": 6,
+      "competitor_shares": {
+        "Cloudflare Workers": 0.5185,
+        "AWS Lambda": 0.2963,
+        "Fastly": 0.1852
+      },
+      "n_competitor_mentions": 27
+    }
+  },
+  "transcript_level": {
+    "inference": {
+      "n": 50,
+      "standalone_demand_share": 0.22,
+      "bundled_mention_share": 0.22,
+      "n_mentioning": 22,
+      "buyer_initiated_share": 0.8182,
+      "n_standalone": 11,
+      "standalone_win_rate": 0.4,
+      "n_standalone_closed": 10,
+      "bundled_win_rate": 0.7273,
+      "loss_reason_shares": {
+        "model_breadth": 0.5,
+        "latency": 0.1667,
+        "compliance": 0.1667,
+        "price": 0.1667
+      },
+      "n_standalone_lost": 6,
+      "competitor_shares": {
+        "Fireworks": 0.2727,
+        "OpenAI direct": 0.1818,
+        "Together AI": 0.4545,
+        "Baseten": 0.0909
+      },
+      "n_competitor_mentions": 22
+    },
+    "edge_compute": {
+      "n": 50,
+      "standalone_demand_share": 0.06,
+      "bundled_mention_share": 0.26,
+      "n_mentioning": 16,
+      "buyer_initiated_share": 0.3333,
+      "n_standalone": 3,
+      "standalone_win_rate": 0.0,
+      "n_standalone_closed": 3,
+      "bundled_win_rate": 0.8333,
+      "loss_reason_shares": {
+        "price": 0.3333,
+        "latency": 0.6667
+      },
+      "n_standalone_lost": 3,
+      "competitor_shares": {
+        "Cloudflare Workers": 0.4375,
+        "AWS Lambda": 0.375,
+        "Fastly": 0.1875
+      },
+      "n_competitor_mentions": 16
+    },
+    "won_share": 0.6,
+    "not_mentioned_either_share": 0.24,
+    "linked_to_account": 30
+  },
+  "behavioral": {
+    "inference": {
+      "standalone_usage_share": 0.2,
+      "total_revenue_usd": 372197.97,
+      "calibration_scale": 0.0447,
+      "standalone_retention_12m": 0.8065,
+      "n_cohort_eligible": 31,
+      "n_direct_accounts": 58,
+      "direct_nrr_12m": 2.047
+    },
+    "edge_compute": {
+      "standalone_usage_share": 0.12,
+      "total_revenue_usd": 42074.41,
+      "calibration_scale": 0.2065,
+      "standalone_retention_12m": 0.4,
+      "n_cohort_eligible": 5,
+      "n_direct_accounts": 14,
+      "direct_nrr_12m": 0.316
+    },
+    "gross_margin_pct_by_product": {
+      "messaging": 0.42,
+      "numbers": 0.7,
+      "cloud_storage": 0.65,
+      "inference": 0.3,
+      "sip_trunking": 0.551,
+      "voice_ai_agents": 0.48,
+      "voice_api": 0.5,
+      "edge_compute": 0.55,
+      "networking": 0.6
+    },
+    "stated_vs_revealed": {
+      "stated_standalone_won_accounts": 7,
+      "revealed_voice_only_share": 0.2857,
+      "detail": {
+        "voice_only": 2,
+        "direct": 5
+      }
+    }
+  },
+  "selfserve": {
+    "inference": {
+      "signup_share": 0.14,
+      "paid_90d_rate_no_voice": 0.1224,
+      "paid_90d_rate_with_voice": 0.2381,
+      "n_no_voice": 147,
+      "n_with_voice": 63
+    },
+    "edge_compute": {
+      "signup_share": 0.08,
+      "paid_90d_rate_no_voice": 0.0238,
+      "paid_90d_rate_with_voice": 0.1944,
+      "n_no_voice": 84,
+      "n_with_voice": 36
+    }
+  }
+}

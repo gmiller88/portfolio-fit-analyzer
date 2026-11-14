@@ -1,0 +1,69 @@
+{
+ "opp_id": "OPP-0015",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "sip_trunking",
+   "quote": "So I saw you wanted to talk about SIP trunking.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "contact_center_modernization",
+   "quote": "we're sort of modernizing the contact center.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Twilio"
+   ],
+   "quote": "We use Twilio for some of it.",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "compliance",
+    "maturity",
+    "integration_effort"
+   ],
+   "quote": "data residency is a big one. We have students and families in Australia, so the data needs to stay in-region. And we'd need a DPA.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "compliance",
+   "quote": "data residency is a big one. We have students and families in Australia, so the data needs to stay in-region.",
+   "confidence": "medium"
+  }
+ }
+}

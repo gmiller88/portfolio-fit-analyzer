@@ -1,0 +1,68 @@
+{
+ "opp_id": "OPP-0042",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "We want a voice AI support agent for patients and for our clinic staff.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_support_agent",
+   "quote": "We want a voice AI support agent for patients and for our clinic staff.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "standalone",
+   "quote": "You could buy it on its own through the API. It doesn't depend on our voice agents at all.",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "rep",
+   "quote": "We also offer edge compute, where you run small functions close to your users.",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [
+    "AWS Lambda"
+   ],
+   "quote": "It's on AWS Lambda.",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "integration_effort",
+    "latency"
+   ],
+   "quote": "the two things I care about most are how much integration effort this is and how fast we can get to production. And the second is latency.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "latency",
+   "quote": "for anything in the live call path, I'd want a p95 around 80 milliseconds, and cold starts on Lambda make that harder than I'd like.",
+   "confidence": "medium"
+  }
+ }
+}

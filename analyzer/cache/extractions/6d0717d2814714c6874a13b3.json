@@ -1,0 +1,72 @@
+{
+ "opp_id": "OPP-0025",
+ "scenario": "latent_standalone",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "edge_compute",
+   "quote": "Before we get into voice, I want to talk about edge compute, because that's actually the thing I care most about right now.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "low_latency_api_gateway",
+   "quote": "We need to run some functions close to our users as a low latency API gateway.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "standalone",
+   "quote": "Its own thing. It lives in our application, in our own pipeline. We'd just call it by API and buy it separately.",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "buyer",
+   "quote": "Before we get into voice, I want to talk about edge compute",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [
+    "Cloudflare Workers"
+   ],
+   "quote": "Today we're looking at Cloudflare Workers for that.",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Vonage",
+    "Plivo"
+   ],
+   "quote": "We use Vonage right now, and we've been looking at Plivo as well.",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "maturity",
+    "support_quality",
+    "cost_predictability"
+   ],
+   "quote": "if we move real production traffic onto something, how proven is it?",
+   "confidence": "medium"
+  },
+  "stated_reason": {
+   "value": "maturity",
+   "quote": "if we move real production traffic onto something, how proven is it? Has anyone run serious production AI-adjacent workloads on your edge product, or is it new?",
+   "confidence": "high"
+  }
+ }
+}

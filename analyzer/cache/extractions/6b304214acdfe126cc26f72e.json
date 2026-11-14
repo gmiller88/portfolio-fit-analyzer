@@ -1,0 +1,67 @@
+{
+ "opp_id": "OPP-0033",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "you want to replace your phone tree with voice AI agents. Did I get that right?",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_ivr_replacement",
+   "quote": "Our IVR is the \"press one for appointments, press two for billing\" kind, and patients hate it. We want voice agents that handle scheduling",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "compliance",
+    "single_vendor",
+    "integration_effort"
+   ],
+   "quote": "the big one for us is data residency. Our patients and our operations are partly in the EU, so call data, recordings, transcripts, all of it, has to stay in the EU.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "compliance",
+   "quote": "the big one for us is data residency.",
+   "confidence": "high"
+  }
+ }
+}

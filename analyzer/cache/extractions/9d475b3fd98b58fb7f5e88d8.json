@@ -1,0 +1,69 @@
+{
+ "opp_id": "OPP-0054",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "you're looking at replacing your IVR with voice agents.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_ivr_replacement",
+   "quote": "We want to replace it with voice agents. Eight of them, planned",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Vapi"
+   ],
+   "quote": "we've been prototyping on Vapi.",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "cost_predictability",
+    "maturity",
+    "price"
+   ],
+   "quote": "First, cost predictability. I do not want to open an invoice in month two and find a surprise.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "maturity",
+   "quote": "how proven is the vendor for production AI workloads, not demos, but real call volume running every day.",
+   "confidence": "medium"
+  }
+ }
+}

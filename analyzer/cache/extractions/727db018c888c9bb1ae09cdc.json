@@ -1,0 +1,73 @@
+{
+ "opp_id": "OPP-0057",
+ "scenario": "latent_standalone",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "we want to replace it with voice AI agents.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_ivr_replacement",
+   "quote": "We have a legacy IVR that handles driver check-ins and dispatch questions, and we want to replace it with voice AI agents.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "medium"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "medium"
+  },
+  "edge_framing": {
+   "value": "bundled_with_voice",
+   "quote": "The agent's logic, things like looking up a load or calling your dispatch API mid-conversation, runs on our edge compute, close to the caller and close to the telephony.",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "rep",
+   "quote": "The agent's logic, things like looking up a load or calling your dispatch API mid-conversation, runs on our edge compute",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "medium"
+  },
+  "competitors_edge": {
+   "value": [
+    "AWS Lambda",
+    "Cloudflare Workers"
+   ],
+   "quote": "Lambda is the obvious comparison, and Cloudflare Workers too.",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Plivo",
+    "Twilio"
+   ],
+   "quote": "We have some numbers and SIP trunks on Plivo, and we've run pilots on Twilio.",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "latency",
+    "price",
+    "single_vendor"
+   ],
+   "quote": "Here's my concern, and it's the big one. Latency.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "latency",
+   "quote": "Here's my concern, and it's the big one. Latency.",
+   "confidence": "high"
+  }
+ }
+}

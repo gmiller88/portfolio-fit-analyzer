@@ -1,0 +1,67 @@
+{
+ "opp_id": "OPP-0018",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "sip_trunking",
+   "quote": "my understanding is you wanted to look at SIP trunking, and this is tied to modernizing your contact center.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "contact_center_modernization",
+   "quote": "my understanding is you wanted to look at SIP trunking, and this is tied to modernizing your contact center.",
+   "confidence": "medium"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "compliance",
+    "cost_predictability",
+    "support_quality"
+   ],
+   "quote": "We need it to stay in India for some of it, and we'd need a DPA for that.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "compliance",
+   "quote": "We need it to stay in India for some of it, and we'd need a DPA for that.",
+   "confidence": "medium"
+  }
+ }
+}

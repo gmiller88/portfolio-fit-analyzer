@@ -1,0 +1,72 @@
+{
+ "opp_id": "OPP-0039",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "your note said voice AI agents for appointment booking.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_appointment_booking",
+   "quote": "We want voice agents that answer, check availability, book, reschedule.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "bundled_with_voice",
+   "quote": "A voice agent needs a language model to do the thinking, and we host that inference on our platform alongside the voice stack.",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "rep",
+   "quote": "A voice agent needs a language model to do the thinking, and we host that inference on our platform alongside the voice stack.",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [
+    "Together AI"
+   ],
+   "quote": "We've actually been quoted by Together AI for that piece.",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Bland AI"
+   ],
+   "quote": "We ran a pilot with Bland AI, a small one.",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "voice_quality",
+    "compliance",
+    "price",
+    "maturity"
+   ],
+   "quote": "What we care about now is whether the voice quality holds up and whether calls actually complete.",
+   "confidence": "medium"
+  },
+  "stated_reason": {
+   "value": "compliance",
+   "quote": "Customer data, so recordings, transcripts, anything personal, has to stay in-region, EU. And we need a signed DPA. Legal won't move without it.",
+   "confidence": "medium"
+  }
+ }
+}

@@ -1,0 +1,74 @@
+{
+ "opp_id": "OPP-0038",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "Your note said voice AI agents for outbound qualification.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_outbound_qualification",
+   "quote": "We want AI agents to call within minutes, confirm the person's intent, ask four or five qualifying questions, and then hand warm leads to a human adviser.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "bundled_with_voice",
+   "quote": "that's where running the inference alongside the voice stack helps, since you're not adding a round trip out to a third party and back.",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "buyer",
+   "quote": "Oh, and the other piece, the language model. I should say, we've been testing Fireworks for that, separately from the voice platform.",
+   "confidence": "medium"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [
+    "Fireworks"
+   ],
+   "quote": "we've been testing Fireworks for that, separately from the voice platform.",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Retell AI",
+    "Plivo"
+   ],
+   "quote": "We've run a pilot on Retell AI. It works, but we're looking at Plivo as well for the telephony side.",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "voice_quality",
+    "reliability",
+    "latency",
+    "model_breadth",
+    "single_vendor"
+   ],
+   "quote": "voice quality and call completion first. If the call drops or the audio is choppy, nobody stays on to qualify. Then reliability.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "latency",
+   "quote": "I care about time to first token. Our target is 300 milliseconds.",
+   "confidence": "medium"
+  }
+ }
+}

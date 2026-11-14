@@ -1,0 +1,69 @@
+{
+ "opp_id": "OPP-0011",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "sip_trunking",
+   "quote": "So I understand you wanted to talk about SIP trunking, tied to a contact center modernization.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "contact_center_modernization",
+   "quote": "We're looking at modernizing it. Making it more flexible, I guess.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Vapi"
+   ],
+   "quote": "we've been poking at Vapi.",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "integration_effort",
+    "single_vendor",
+    "support_quality"
+   ],
+   "quote": "We don't want a huge integration project.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "single_vendor",
+   "quote": "we're kind of leaning toward keeping things with our existing cloud and AI vendor, if we can. Fewer vendors, simpler.",
+   "confidence": "high"
+  }
+ }
+}

@@ -1,0 +1,73 @@
+{
+ "opp_id": "OPP-0077",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "We want to replace it with conversational voice agents. We're planning three: billing, technical support, and a general front door that routes.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_ivr_replacement",
+   "quote": "We have a legacy touch-tone IVR.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "standalone",
+   "quote": "It's separate from the voice side, you can buy it on its own through an API.",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "rep",
+   "quote": "We have an edge compute product for running functions close to users.",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [
+    "AWS Lambda",
+    "Cloudflare Workers"
+   ],
+   "quote": "It's on AWS Lambda at the moment, and someone on the team has been playing with Cloudflare Workers.",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Retell AI"
+   ],
+   "quote": "we ran a small pilot on Retell AI.",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "compliance",
+    "voice_quality",
+    "price",
+    "cost_predictability"
+   ],
+   "quote": "Our Canadian subscriber data has to stay in Canada, and we need a DPA in place. Second, voice quality and call completion.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "compliance",
+   "quote": "Our Canadian subscriber data has to stay in Canada, and we need a DPA in place.",
+   "confidence": "medium"
+  }
+ }
+}

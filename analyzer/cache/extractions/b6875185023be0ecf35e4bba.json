@@ -1,0 +1,68 @@
+{
+ "opp_id": "OPP-0019",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_api",
+   "quote": "you wanted to talk about the Voice API and replacing your IVR",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_ivr_replacement",
+   "quote": "more conversational, I guess. Less menu stuff. We've been talking about voice agents, a few of them.",
+   "confidence": "medium"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Vonage"
+   ],
+   "quote": "We're on Vonage right now for some of it. And we're looking at them for this too, as one of the options.",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "maturity",
+    "voice_quality"
+   ],
+   "quote": "has anyone actually run this stuff in production? Like AI voice, real customers, real claims calls. Not demos.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "maturity",
+   "quote": "has anyone actually run this stuff in production? Like AI voice, real customers, real claims calls. Not demos.",
+   "confidence": "high"
+  }
+ }
+}

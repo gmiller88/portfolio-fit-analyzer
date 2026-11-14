@@ -1,0 +1,72 @@
+{
+ "opp_id": "OPP-0068",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "I saw your note said voice AI agents for outbound qualification.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_outbound_qualification",
+   "quote": "We want AI agents that call out, confirm the lead is real, ask about trip size, dates, budget, and then hand off the qualified ones to a human.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "bundled_with_voice",
+   "quote": "I'm not looking to buy an LLM API as its own thing. But the voice agent needs one behind it",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "rep",
+   "quote": "Fifteen agents, so different scripts and probably different models per agent?",
+   "confidence": "medium"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [
+    "OpenAI",
+    "Fireworks"
+   ],
+   "quote": "I've been comparing OpenAI direct and Fireworks for that.",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "model_breadth",
+    "price",
+    "compliance",
+    "voice_quality",
+    "maturity"
+   ],
+   "quote": "we need to swap between several open models.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "compliance",
+   "quote": "A chunk of the calls would be to leads in India, and the data has to stay in India.",
+   "confidence": "medium"
+  }
+ }
+}

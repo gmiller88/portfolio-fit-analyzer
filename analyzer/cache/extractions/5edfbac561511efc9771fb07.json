@@ -1,0 +1,67 @@
+{
+ "opp_id": "OPP-0078",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "sip_trunking",
+   "quote": "You mentioned SIP trunking as the main thing you wanted to cover.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "contact_center_modernization",
+   "quote": "We're modernizing our contact center.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "price",
+    "single_vendor",
+    "cost_predictability"
+   ],
+   "quote": "My preference is to consolidate there if I can. Fewer contracts, one invoice, one throat to choke.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "single_vendor",
+   "quote": "we already have a cloud and AI vendor relationship. My preference is to consolidate there if I can.",
+   "confidence": "high"
+  }
+ }
+}

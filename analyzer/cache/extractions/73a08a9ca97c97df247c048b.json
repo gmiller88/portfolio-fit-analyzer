@@ -1,0 +1,73 @@
+{
+ "opp_id": "OPP-0062",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "numbers",
+   "quote": "your note said numbers were the main thing you wanted to cover. Do you want to start there, with the porting?",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "number_porting_migration",
+   "quote": "We have a block of numbers sitting with Vonage right now, and we want to move them.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Vonage",
+    "Vapi"
+   ],
+   "quote": "We have a block of numbers sitting with Vonage right now, and we want to move them. The reason is that we're building out voice agents, and I'd rather have the numbers and the voice infrastructure under one roof. We're also looking at Vapi for the agent layer",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "compliance",
+    "integration_effort",
+    "maturity",
+    "voice_quality",
+    "single_vendor",
+    "reliability"
+   ],
+   "quote": "We'll need a DPA, and we need the data to stay in-region.",
+   "confidence": "medium"
+  },
+  "stated_reason": {
+   "value": "compliance",
+   "quote": "the big thing for us is Canada. Some of the numbers and the traffic tied to them have to stay in Canada. We'll need a DPA, and we need the data to stay in-region.",
+   "confidence": "medium"
+  }
+ }
+}

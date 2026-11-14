@@ -1,0 +1,69 @@
+{
+ "opp_id": "OPP-0040",
+ "scenario": "latent_standalone",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "your note said you want to talk voice AI agents for outbound qualification",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_outbound_qualification",
+   "quote": "We want AI agents making those first calls, asking a handful of qualifying questions, and booking the good ones onto a human's calendar.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "bundled_with_voice",
+   "quote": "With a Telnyx Voice AI agent, the code that drives the agent, like pulling a lead record or writing the qualification result back, runs on our edge compute, close to the call.",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "rep",
+   "quote": "runs on our edge compute, close to the call. It's part of how the agent works",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [
+    "AWS Lambda"
+   ],
+   "quote": "Our engineers were looking at stitching things together on AWS Lambda for the call logic",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "compliance",
+    "reliability",
+    "integration_effort"
+   ],
+   "quote": "the data has to stay in Australia. We'd need a DPA in place too.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "compliance",
+   "quote": "Part of this will be calling into Australia, and the data has to stay in Australia. We'd need a DPA in place too.",
+   "confidence": "medium"
+  }
+ }
+}

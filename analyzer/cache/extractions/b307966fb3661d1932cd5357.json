@@ -1,0 +1,73 @@
+{
+ "opp_id": "OPP-0006",
+ "scenario": "latent_standalone",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "inference",
+   "quote": "the thing I most wanted to talk about is inference. We're building an internal copilot for our care coordinators and support staff, and I need a hosted LLM API.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "internal_copilot",
+   "quote": "We're building an internal copilot for our care coordinators and support staff",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "standalone",
+   "quote": "We're not tying it to any voice agent. We'd buy it on its own.",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "buyer",
+   "quote": "the thing I most wanted to talk about is inference.",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [
+    "Fireworks"
+   ],
+   "quote": "We're talking to Fireworks right now, and their quote came in around fifty-one cents per million tokens.",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Twilio",
+    "Vonage"
+   ],
+   "quote": "Right now we're on Twilio, and we've also looked at Vonage.",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "price",
+    "cost_predictability",
+    "compliance",
+    "reliability"
+   ],
+   "quote": "Yours was about a dollar five, so I'll need to understand that gap.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "compliance",
+   "quote": "We have operations in India, and the data has to stay in-region. We'd need a DPA signed, too.",
+   "confidence": "medium"
+  }
+ }
+}

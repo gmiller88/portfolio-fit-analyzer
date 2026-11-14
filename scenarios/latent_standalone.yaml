@@ -1,0 +1,38 @@
+name: latent_standalone
+description: >
+  Real buyer-led standalone demand for Inference (Edge stays component-like). Telnyx loses many of the
+  standalone Inference deals to specialist inference clouds on model breadth and price. Accounts that do
+  buy standalone Inference retain and expand.
+seed: 2202
+voice_ai_attach_rate: 0.40
+inference_pull_rate: 0.75
+edge_pull_rate: 0.40
+stated_vs_revealed_gap: 0.25
+organic_standalone_share: {inference: 0.14, edge_compute: 0.03}
+direct_growth_retained_monthly: 0.05
+inference:
+  standalone_demand_share: 0.25
+  bundled_mention_share: 0.20
+  buyer_initiated_share: 0.75
+  standalone_win_rate: 0.35
+  bundled_win_rate: 0.70
+  loss_reason_weights: {price: 0.30, model_breadth: 0.40, latency: 0.10, compliance: 0.10, maturity: 0.10, single_vendor: 0.0}
+  competitor_weights: {Together AI: 0.35, Fireworks: 0.30, Baseten: 0.15, OpenAI direct: 0.20}
+  standalone_usage_share: 0.20
+  standalone_retention_12m: 0.80
+  selfserve_signup_share: 0.14
+  selfserve_paid_90d_rate: 0.12
+  selfserve_paid_90d_rate_with_voice: 0.24
+edge_compute:
+  standalone_demand_share: 0.10
+  bundled_mention_share: 0.24
+  buyer_initiated_share: 0.40
+  standalone_win_rate: 0.15
+  bundled_win_rate: 0.70
+  loss_reason_weights: {price: 0.34, model_breadth: 0.0, latency: 0.33, compliance: 0.0, maturity: 0.33, single_vendor: 0.0}
+  competitor_weights: {Cloudflare Workers: 0.50, Fastly: 0.20, AWS Lambda: 0.30}
+  standalone_usage_share: 0.12
+  standalone_retention_12m: 0.40
+  selfserve_signup_share: 0.08
+  selfserve_paid_90d_rate: 0.02
+  selfserve_paid_90d_rate_with_voice: 0.20

@@ -1,0 +1,202 @@
+{
+ "OPP-0001": {
+  "hash": "778ef229947cde05",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0002": {
+  "hash": "ef44a1bc94a01fff",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0005": {
+  "hash": "ad7590543480bb01",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0006": {
+  "hash": "31d512dcc23c7b86",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0009": {
+  "hash": "664f0161d85976a3",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0011": {
+  "hash": "b5ba7d4385cb304e",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0012": {
+  "hash": "f6988335e7db3c57",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0013": {
+  "hash": "80d4c7ab8d47be73",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0015": {
+  "hash": "24c810f56b0d7277",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0018": {
+  "hash": "35fa3c4c17859078",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0019": {
+  "hash": "43be12b962aad8c4",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0020": {
+  "hash": "0fe22af1efbff17d",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0022": {
+  "hash": "8ba1665ab291a6d4",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0023": {
+  "hash": "dda2036a3faa2f38",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0024": {
+  "hash": "0358024b723df257",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0025": {
+  "hash": "2187989662c42fed",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0026": {
+  "hash": "11585bfd4c299b28",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0027": {
+  "hash": "e8f4df33bb907491",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0029": {
+  "hash": "e3a8bd5d46de3fd8",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0030": {
+  "hash": "556b7ed94da9bd21",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0032": {
+  "hash": "529490dc59dbe115",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0033": {
+  "hash": "9d0eda972e17c47c",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0034": {
+  "hash": "fcb6b701fb5f7ca1",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0035": {
+  "hash": "20f35f258b27ff69",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0036": {
+  "hash": "e368af39029ce38c",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0038": {
+  "hash": "85fc891fd9831568",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0039": {
+  "hash": "acdc271c25168aeb",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0041": {
+  "hash": "2a0586ca3992b046",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0042": {
+  "hash": "6d0e87df00324b79",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0045": {
+  "hash": "993586255776c477",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0047": {
+  "hash": "f1d1cbb49fc2e77f",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0049": {
+  "hash": "33643e1fd1268f84",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0050": {
+  "hash": "0ba4578a446d0951",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0053": {
+  "hash": "78889b8076c72c34",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0054": {
+  "hash": "1a08996ab38ab8d6",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0058": {
+  "hash": "54d1c13aacea1055",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0060": {
+  "hash": "8dfcbaa0bd6aa859",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0062": {
+  "hash": "4d649f02a29d3288",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0064": {
+  "hash": "57f22dfda7b075f0",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0065": {
+  "hash": "af5a1e33f78f6994",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0066": {
+  "hash": "b5775f36cbec6a94",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0067": {
+  "hash": "7c2f5d78d27c0112",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0068": {
+  "hash": "3bb4135faf1850f1",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0071": {
+  "hash": "ac617c7d697127c2",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0072": {
+  "hash": "6aa71b1513ab52de",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0074": {
+  "hash": "44d042cf69290d8d",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0077": {
+  "hash": "b98292a35d0a29d3",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0078": {
+  "hash": "cc3a0a3181e43856",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0079": {
+  "hash": "82e3c0f754adeae7",
+  "source": "llm:claude-sonnet-5-5"
+ },
+ "OPP-0080": {
+  "hash": "be9ea2beeca6c9c5",
+  "source": "llm:claude-sonnet-5-5"
+ }
+}

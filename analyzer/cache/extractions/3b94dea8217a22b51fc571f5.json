@@ -1,0 +1,74 @@
+{
+ "opp_id": "OPP-0035",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "We're thinking about voice agents to take some of the load.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_support_agent",
+   "quote": "I understand you're looking at voice AI agents for support.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "medium"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "medium"
+  },
+  "edge_framing": {
+   "value": "bundled_with_voice",
+   "quote": "within a Telnyx voice agent, the functions the agent calls, like checking an order or booking a callback, can run on our edge compute, close to where the call is.",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "buyer",
+   "quote": "we looked at Cloudflare Workers for the code part, the functions that run when the agent needs to look something up. Is that something you'd handle too?",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "medium"
+  },
+  "competitors_edge": {
+   "value": [
+    "Cloudflare Workers"
+   ],
+   "quote": "we looked at Cloudflare Workers for the code part",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Bland AI",
+    "Vapi"
+   ],
+   "quote": "We've poked at Bland AI a bit. And Vapi, Priya's been in that one more.",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "price",
+    "cost_predictability",
+    "voice_quality",
+    "reliability",
+    "single_vendor"
+   ],
+   "quote": "it just shouldn't surprise us later.",
+   "confidence": "medium"
+  },
+  "stated_reason": {
+   "value": "price",
+   "quote": "Well, cost, obviously. We want it to be reasonable.",
+   "confidence": "medium"
+  }
+ }
+}

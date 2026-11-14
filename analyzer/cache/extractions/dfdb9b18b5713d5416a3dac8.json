@@ -1,0 +1,71 @@
+{
+ "opp_id": "OPP-0026",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "I understand it's voice AI agents for support.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_support_agent",
+   "quote": "Drivers, dispatchers, customers calling in about shipments.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "standalone",
+   "quote": "You can buy it on its own, it doesn't depend on our voice agents.",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "rep",
+   "quote": "A lot of teams building voice agents also run their own language model workloads in their own application.",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [
+    "Together AI",
+    "OpenAI"
+   ],
+   "quote": "Together AI, and just going to OpenAI direct, honestly.",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "reliability",
+    "model_breadth",
+    "price",
+    "cost_predictability"
+   ],
+   "quote": "Well, it has to be reliable. We're logistics, so if the phones go down, that's a real problem.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "price",
+   "quote": "One competitor quoted about fifty-seven cents per million tokens. Yours came back around a dollar five. That's a big gap",
+   "confidence": "high"
+  }
+ }
+}

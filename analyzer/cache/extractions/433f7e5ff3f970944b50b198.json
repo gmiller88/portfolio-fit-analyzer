@@ -1,0 +1,72 @@
+{
+ "opp_id": "OPP-0079",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "We want to replace our IVR with voice AI agents.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_ivr_replacement",
+   "quote": "We want to replace our IVR with voice AI agents.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "standalone",
+   "quote": "Even if you build some of your pipeline in your own application, you could buy that on its own.",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "rep",
+   "quote": "Separate from the voice agents, we also offer hosted LLM inference through an API.",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [
+    "Together AI"
+   ],
+   "quote": "they've been looking at Together AI.",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Twilio",
+    "Bland AI"
+   ],
+   "quote": "Twilio for the carrier layer, and we ran a small pilot with Bland AI for the agent piece.",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "integration_effort",
+    "model_breadth",
+    "latency"
+   ],
+   "quote": "Integration effort matters a lot to me.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "latency",
+   "quote": "What I'll want to know is responsiveness. For anything conversational, we need time to first token around 300 milliseconds.",
+   "confidence": "medium"
+  }
+ }
+}

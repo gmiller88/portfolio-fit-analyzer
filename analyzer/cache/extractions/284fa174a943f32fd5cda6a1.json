@@ -1,0 +1,73 @@
+{
+ "opp_id": "OPP-0078",
+ "scenario": "latent_standalone",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "So I saw you were interested in voice AI agents.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_support_agent",
+   "quote": "Sort of a support agent, but voice.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "bundled_with_voice",
+   "quote": "With a Telnyx voice agent, the function code that runs mid-call, like looking up a student record, runs on our edge compute, close to the caller and next to the telephony.",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "rep",
+   "quote": "the function code that runs mid-call, like looking up a student record, runs on our edge compute",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [
+    "Cloudflare Workers"
+   ],
+   "quote": "we did look at Cloudflare Workers for something like that, a little.",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Vapi",
+    "Vonage"
+   ],
+   "quote": "We've played around with Vapi a bit. And Vonage is our current telephony, sort of.",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "voice_quality",
+    "latency",
+    "compliance",
+    "support_quality"
+   ],
+   "quote": "Our data has to stay in the EU. And we'd need a DPA signed.",
+   "confidence": "medium"
+  },
+  "stated_reason": {
+   "value": "compliance",
+   "quote": "Yes, that one's important. Our data has to stay in the EU. And we'd need a DPA signed.",
+   "confidence": "medium"
+  }
+ }
+}

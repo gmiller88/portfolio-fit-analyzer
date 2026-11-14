@@ -1,0 +1,71 @@
+{
+ "opp_id": "OPP-0001",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "edge_compute",
+   "quote": "the thing I actually wanted to ask about is edge functions.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "edge_functions_routing",
+   "quote": "there's logic that decides where a session goes, which agent, which region, that sort of thing.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "standalone",
+   "quote": "I'd want to just call it through an API and not tie it to anything else.",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "buyer",
+   "quote": "the thing I actually wanted to ask about is edge functions.",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [
+    "Cloudflare Workers"
+   ],
+   "quote": "We've poked at Cloudflare Workers.",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Twilio"
+   ],
+   "quote": "We're on Twilio for some of it.",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "single_vendor",
+    "reliability",
+    "maturity"
+   ],
+   "quote": "Ideally we'd keep things with one vendor if we can.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "single_vendor",
+   "quote": "Our whole stack is already with one cloud, so there's a pull toward just staying there.",
+   "confidence": "medium"
+  }
+ }
+}

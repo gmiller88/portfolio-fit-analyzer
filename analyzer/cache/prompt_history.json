@@ -1,0 +1,80 @@
+{
+ "v1": {
+  "change": "Initial prompt and schema. (The first scoring run showed 68% framing/raised-by, which was a validator bug: pandas read the truth value 'n/a' as missing. Fixed in validation.py before any prompt change; the v1 numbers below are the corrected ones.)",
+  "results": {
+   "component": {
+    "framing_and_raised_by_accuracy": 1.0,
+    "fields": {
+     "primary_interest": 0.9,
+     "use_case": 0.86,
+     "inference_framing": 1.0,
+     "inference_raised_by": 1.0,
+     "edge_framing": 1.0,
+     "edge_raised_by": 1.0,
+     "competitors_inference": 0.86,
+     "competitors_edge": 1.0,
+     "competitors_voice": 1.0,
+     "decision_criteria": 0.12,
+     "stated_reason": 0.688
+    },
+    "quote_grounding_rate": 0.96
+   },
+   "latent_standalone": {
+    "framing_and_raised_by_accuracy": 0.975,
+    "fields": {
+     "primary_interest": 0.98,
+     "use_case": 0.98,
+     "inference_framing": 0.98,
+     "inference_raised_by": 0.96,
+     "edge_framing": 1.0,
+     "edge_raised_by": 0.96,
+     "competitors_inference": 0.92,
+     "competitors_edge": 1.0,
+     "competitors_voice": 1.0,
+     "decision_criteria": 0.08,
+     "stated_reason": 0.412
+    },
+    "quote_grounding_rate": 0.9
+   }
+  }
+ },
+ "v2": {
+  "change": "Tightened the decision-criteria definition: only criteria the buyer presents as influencing their choice count; procedural mentions (security-review logistics, asking for a quote, timeline) do not. Target was exceeded already by v1 on framing/raised-by, so those fields were left alone.",
+  "results": {
+   "component": {
+    "framing_and_raised_by_accuracy": 0.995,
+    "fields": {
+     "primary_interest": 0.9,
+     "use_case": 0.86,
+     "inference_framing": 1.0,
+     "inference_raised_by": 0.98,
+     "edge_framing": 1.0,
+     "edge_raised_by": 1.0,
+     "competitors_inference": 0.86,
+     "competitors_edge": 1.0,
+     "competitors_voice": 1.0,
+     "decision_criteria": 0.5,
+     "stated_reason": 0.688
+    },
+    "quote_grounding_rate": 1.0
+   },
+   "latent_standalone": {
+    "framing_and_raised_by_accuracy": 0.98,
+    "fields": {
+     "primary_interest": 0.98,
+     "use_case": 0.98,
+     "inference_framing": 0.98,
+     "inference_raised_by": 0.96,
+     "edge_framing": 1.0,
+     "edge_raised_by": 0.98,
+     "competitors_inference": 0.92,
+     "competitors_edge": 1.0,
+     "competitors_voice": 1.0,
+     "decision_criteria": 0.48,
+     "stated_reason": 0.353
+    },
+    "quote_grounding_rate": 0.96
+   }
+  }
+ }
+}

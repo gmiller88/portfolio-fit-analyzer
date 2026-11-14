@@ -1,0 +1,75 @@
+{
+ "opp_id": "OPP-0074",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "sip_trunking",
+   "quote": "So my understanding is you're looking at SIP trunking as part of a contact center modernization.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "contact_center_modernization",
+   "quote": "We're running a legacy contact center on old trunks, and we're moving to a cloud setup.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "medium"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "medium"
+  },
+  "edge_framing": {
+   "value": "standalone",
+   "quote": "you can buy that on its own through the API. It doesn't need to be tied to anything else we sell.",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "rep",
+   "quote": "Can I throw in something you didn't ask about? Edge compute.",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "medium"
+  },
+  "competitors_edge": {
+   "value": [
+    "AWS Lambda",
+    "Cloudflare Workers"
+   ],
+   "quote": "Some on AWS Lambda, and we've poked at Cloudflare Workers for a couple of smaller things.",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Twilio",
+    "Bandwidth"
+   ],
+   "quote": "Mostly Twilio for the newer pieces. We also have some capacity with Bandwidth",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "price",
+    "cost_predictability",
+    "compliance",
+    "maturity",
+    "reliability"
+   ],
+   "quote": "Cost is the big thing for me. Per-minute, per-token, the total picture. I want to see it all in one place, not find surprises in month three.",
+   "confidence": "medium"
+  },
+  "stated_reason": {
+   "value": "compliance",
+   "quote": "Our requirement is EU. Data has to stay in-region, and we'd need a DPA signed before anything goes live.",
+   "confidence": "medium"
+  }
+ }
+}

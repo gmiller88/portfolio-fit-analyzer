@@ -1,0 +1,73 @@
+{
+ "opp_id": "OPP-0034",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "We want to replace it with voice AI agents that actually understand what someone wants and either resolve it or route it properly.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_ivr_replacement",
+   "quote": "We have a legacy IVR on our inbound lines for tenants and prospective buyers.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "bundled_with_voice",
+   "quote": "Whatever model sits behind the agent, I need time to first token around 250 milliseconds.",
+   "confidence": "medium"
+  },
+  "inference_raised_by": {
+   "value": "buyer",
+   "quote": "that's where I get to the LLM piece, because that's what makes or breaks it for us.",
+   "confidence": "medium"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [
+    "Together AI"
+   ],
+   "quote": "I've also been looking at Together AI for hosting those",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Sinch",
+    "Vapi"
+   ],
+   "quote": "Sinch carries the numbers right now. And we've prototyped with Vapi",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "latency",
+    "price",
+    "support_quality",
+    "integration_effort"
+   ],
+   "quote": "I need time to first token around 250 milliseconds.",
+   "confidence": "medium"
+  },
+  "stated_reason": {
+   "value": "latency",
+   "quote": "I need time to first token around 250 milliseconds. Otherwise the conversation feels like a satellite call.",
+   "confidence": "medium"
+  }
+ }
+}

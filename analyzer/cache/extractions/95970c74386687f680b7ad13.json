@@ -1,0 +1,72 @@
+{
+ "opp_id": "OPP-0049",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "you mentioned voice AI agents for appointment booking.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_appointment_booking",
+   "quote": "they want an AI that answers calls and books installs and service visits.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "bundled_with_voice",
+   "quote": "I'm not suggesting you buy edge as a standalone thing. It's just what makes the agent work well.",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "rep",
+   "quote": "can run on our Edge compute, close to where the call is handled.",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [
+    "Cloudflare Workers"
+   ],
+   "quote": "We did toy with Cloudflare Workers for exactly that kind of function.",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Vonage",
+    "Sinch"
+   ],
+   "quote": "Right now we're on Vonage for most of our programmable voice. We've also been looking at Sinch",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "integration_effort",
+    "latency",
+    "maturity"
+   ],
+   "quote": "integration effort matters a lot. Two, latency. When a caller finishes talking, how long until the agent starts responding.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "latency",
+   "quote": "Two, latency. When a caller finishes talking, how long until the agent starts responding.",
+   "confidence": "low"
+  }
+ }
+}

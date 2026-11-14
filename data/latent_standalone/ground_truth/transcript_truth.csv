@@ -1,0 +1,51 @@
+opp_id,primary_interest,use_case,inference_framing,inference_raised_by,edge_framing,edge_raised_by,competitors_inference,competitors_edge,competitors_voice,decision_criteria,outcome,primary_loss_reason,segment
+OPP-0001,sip_trunking,contact_center_modernization,not_mentioned,n/a,not_mentioned,n/a,,,Vapi,integration_effort|reliability|support_quality|voice_quality,won,n/a,mid_market
+OPP-0002,inference,internal_copilot,standalone,buyer,not_mentioned,n/a,Fireworks,,Vonage,latency|maturity|price,won,n/a,smb
+OPP-0003,inference,rag_pipeline,standalone,buyer,not_mentioned,n/a,OpenAI direct,,Twilio,compliance|model_breadth,lost,model_breadth,smb
+OPP-0006,inference,internal_copilot,standalone,buyer,not_mentioned,n/a,Fireworks,,Twilio|Vonage,compliance|cost_predictability|reliability,won,n/a,mid_market
+OPP-0007,voice_ai_agents,voice_ai_outbound_qualification,not_mentioned,n/a,bundled_with_voice,rep,,Cloudflare Workers,Vonage,integration_effort|maturity|price|single_vendor,lost,maturity,mid_market
+OPP-0010,voice_api,ivr_replacement,not_mentioned,n/a,not_mentioned,n/a,,,Retell AI|Twilio,cost_predictability|integration_effort,won,n/a,mid_market
+OPP-0011,voice_ai_agents,voice_ai_support_agent,standalone,rep,not_mentioned,n/a,OpenAI direct,,Plivo,cost_predictability|support_quality,won,n/a,smb
+OPP-0012,voice_api,contact_center_modernization,not_mentioned,n/a,not_mentioned,n/a,,,,integration_effort|maturity|support_quality|voice_quality,won,n/a,enterprise
+OPP-0013,voice_ai_agents,voice_ai_appointment_booking,not_mentioned,n/a,bundled_with_voice,buyer,,Cloudflare Workers,Twilio,latency|price|reliability,won,n/a,mid_market
+OPP-0015,messaging,otp_verification,not_mentioned,n/a,not_mentioned,n/a,,,,compliance|cost_predictability|integration_effort|price,won,n/a,enterprise
+OPP-0016,voice_ai_agents,voice_ai_ivr_replacement,bundled_with_voice,rep,not_mentioned,n/a,OpenAI direct|Together AI,,,cost_predictability|maturity,won,n/a,smb
+OPP-0018,voice_ai_agents,voice_ai_outbound_qualification,not_mentioned,n/a,bundled_with_voice,rep,,Cloudflare Workers|AWS Lambda,,price|reliability,won,n/a,mid_market
+OPP-0019,voice_ai_agents,voice_ai_appointment_booking,not_mentioned,n/a,bundled_with_voice,buyer,,AWS Lambda|Cloudflare Workers,Vapi|Twilio,cost_predictability|maturity|reliability,won,n/a,smb
+OPP-0024,sip_trunking,contact_center_modernization,not_mentioned,n/a,not_mentioned,n/a,,,Sinch,integration_effort|support_quality,won,n/a,mid_market
+OPP-0025,edge_compute,low_latency_api_gateway,not_mentioned,n/a,standalone,buyer,,Cloudflare Workers,Vonage|Plivo,maturity|price|support_quality,lost,price,enterprise
+OPP-0027,voice_ai_agents,voice_ai_support_agent,not_mentioned,n/a,bundled_with_voice,buyer,,AWS Lambda,,integration_effort|reliability|voice_quality,won,n/a,mid_market
+OPP-0028,voice_ai_agents,voice_ai_support_agent,not_mentioned,n/a,standalone,rep,,Cloudflare Workers|AWS Lambda,Vapi,cost_predictability|integration_effort|latency,lost,latency,smb
+OPP-0029,sip_trunking,sip_migration,not_mentioned,n/a,not_mentioned,n/a,,,Sinch|Bandwidth,integration_effort|single_vendor|support_quality,won,n/a,enterprise
+OPP-0030,numbers,number_porting_migration,not_mentioned,n/a,not_mentioned,n/a,,,Vonage|Twilio,price|reliability|voice_quality,lost,price,smb
+OPP-0031,voice_ai_agents,voice_ai_ivr_replacement,bundled_with_voice,buyer,not_mentioned,n/a,Together AI|Fireworks,,Vapi,maturity|single_vendor|voice_quality,won,n/a,smb
+OPP-0032,voice_ai_agents,voice_ai_support_agent,bundled_with_voice,buyer,not_mentioned,n/a,Together AI,,,cost_predictability|integration_effort|price,won,n/a,mid_market
+OPP-0033,voice_ai_agents,voice_ai_appointment_booking,not_mentioned,n/a,bundled_with_voice,rep,,Fastly,Sinch,compliance|voice_quality,won,n/a,smb
+OPP-0035,voice_ai_agents,voice_ai_ivr_replacement,bundled_with_voice,buyer,not_mentioned,n/a,Together AI|Baseten,,,single_vendor|support_quality|voice_quality,won,n/a,smb
+OPP-0037,inference,rag_pipeline,standalone,buyer,not_mentioned,n/a,Together AI,,,cost_predictability|latency|model_breadth,lost,latency,mid_market
+OPP-0038,numbers,number_porting_migration,not_mentioned,n/a,not_mentioned,n/a,,,,maturity|price|voice_quality,lost,price,smb
+OPP-0039,voice_ai_agents,voice_ai_appointment_booking,not_mentioned,n/a,bundled_with_voice,rep,,AWS Lambda,Vapi,integration_effort|single_vendor,won,n/a,mid_market
+OPP-0040,voice_ai_agents,voice_ai_outbound_qualification,not_mentioned,n/a,bundled_with_voice,rep,,AWS Lambda,,compliance|integration_effort|reliability,won,n/a,enterprise
+OPP-0041,inference,llm_api_backend,standalone,buyer,not_mentioned,n/a,Fireworks,,Twilio,cost_predictability|model_breadth,lost,model_breadth,mid_market
+OPP-0043,voice_ai_agents,voice_ai_outbound_qualification,not_mentioned,n/a,bundled_with_voice,buyer,,AWS Lambda|Fastly,,cost_predictability|voice_quality,won,n/a,mid_market
+OPP-0046,voice_ai_agents,voice_ai_ivr_replacement,not_mentioned,n/a,bundled_with_voice,buyer,,Fastly,,latency|single_vendor,lost,latency,mid_market
+OPP-0047,voice_ai_agents,voice_ai_appointment_booking,bundled_with_voice,rep,not_mentioned,n/a,Together AI,,Vapi,cost_predictability|model_breadth|reliability|single_vendor,won,n/a,mid_market
+OPP-0048,voice_ai_agents,voice_ai_support_agent,not_mentioned,n/a,bundled_with_voice,buyer,,Cloudflare Workers,,compliance|price|support_quality,won,n/a,mid_market
+OPP-0049,voice_ai_agents,voice_ai_appointment_booking,bundled_with_voice,buyer,not_mentioned,n/a,OpenAI direct,,Plivo,compliance|cost_predictability|model_breadth,lost,compliance,mid_market
+OPP-0051,voice_ai_agents,voice_ai_support_agent,bundled_with_voice,rep,not_mentioned,n/a,Fireworks,,Twilio|Sinch,cost_predictability|maturity|reliability|single_vendor,lost,maturity,mid_market
+OPP-0053,voice_ai_agents,voice_ai_ivr_replacement,bundled_with_voice,buyer,not_mentioned,n/a,Together AI,,Bandwidth,cost_predictability|integration_effort|model_breadth|single_vendor,won,n/a,mid_market
+OPP-0054,voice_ai_agents,voice_ai_ivr_replacement,bundled_with_voice,rep,not_mentioned,n/a,Baseten,,Bandwidth|Twilio,maturity|price|voice_quality,won,n/a,enterprise
+OPP-0057,voice_ai_agents,voice_ai_ivr_replacement,not_mentioned,n/a,bundled_with_voice,rep,,AWS Lambda|Cloudflare Workers,Plivo|Twilio,latency|price|single_vendor,won,n/a,mid_market
+OPP-0058,inference,batch_document_processing,standalone,buyer,not_mentioned,n/a,Baseten|Fireworks,,Retell AI|Vonage,compliance|price|voice_quality,lost,compliance,mid_market
+OPP-0059,inference,internal_copilot,standalone,buyer,not_mentioned,n/a,Together AI,,Twilio,cost_predictability|latency|price,won,n/a,enterprise
+OPP-0060,voice_ai_agents,voice_ai_ivr_replacement,not_mentioned,n/a,standalone,rep,,Fastly,,compliance|latency|voice_quality,lost,latency,enterprise
+OPP-0061,voice_ai_agents,voice_ai_support_agent,not_mentioned,n/a,not_mentioned,n/a,,,,integration_effort|maturity|price,won,n/a,mid_market
+OPP-0063,sip_trunking,sip_migration,not_mentioned,n/a,not_mentioned,n/a,,,,model_breadth|price|support_quality|voice_quality,lost,model_breadth,smb
+OPP-0064,inference,batch_document_processing,standalone,buyer,not_mentioned,n/a,Together AI,,Vonage,maturity|model_breadth|price,lost,model_breadth,mid_market
+OPP-0066,messaging,otp_verification,not_mentioned,n/a,not_mentioned,n/a,,,,compliance|single_vendor|voice_quality,won,n/a,smb
+OPP-0068,voice_ai_agents,voice_ai_support_agent,bundled_with_voice,rep,not_mentioned,n/a,Together AI|Baseten,,Twilio,maturity|price,won,n/a,mid_market
+OPP-0069,voice_ai_agents,voice_ai_appointment_booking,bundled_with_voice,rep,not_mentioned,n/a,Together AI|Baseten,,,price|single_vendor,lost,single_vendor,enterprise
+OPP-0072,sip_trunking,contact_center_modernization,standalone,rep,not_mentioned,n/a,Fireworks,,,model_breadth|price,lost,price,mid_market
+OPP-0075,voice_api,contact_center_modernization,not_mentioned,n/a,not_mentioned,n/a,,,Twilio,maturity|reliability|support_quality,open,n/a,smb
+OPP-0077,inference,internal_copilot,standalone,buyer,not_mentioned,n/a,Fireworks,,,cost_predictability|integration_effort|maturity|price,open,n/a,mid_market
+OPP-0078,voice_ai_agents,voice_ai_support_agent,not_mentioned,n/a,bundled_with_voice,rep,,Cloudflare Workers,Vapi|Vonage,compliance|latency|support_quality,open,n/a,mid_market

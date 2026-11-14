@@ -1,0 +1,17 @@
+# Knobs shared by every scenario unless overridden.
+months: 18
+start_month: "2025-05"
+n_accounts: 400
+n_opportunities: 80
+n_transcripts: 50
+n_signups: 1500
+won_share_of_transcripts: 0.60
+open_share: 0.08
+base_win_rate: 0.65                 # opps with no Inference/Edge angle
+bundled_buyer_initiated_share: 0.45 # bundled mentions raised by buyer
+voice_ai_attach_rate: 0.40          # voice-led accounts that adopt Voice AI agents
+mixed_direct_rate: {inference: 0.08, edge_compute: 0.05}  # Voice-AI accounts that ALSO use the product directly
+default_selfserve_paid_90d_rate: 0.10
+selfserve_with_voice_share: 0.30    # share of inference/edge-entry signups that also adopt voice by day 90
+default_loss_reason_weights: {price: 0.25, single_vendor: 0.25, maturity: 0.2, compliance: 0.1, latency: 0.1, model_breadth: 0.1}
+voice_competitors: {Twilio: 0.35, Vonage: 0.15, Bandwidth: 0.12, Plivo: 0.08, Sinch: 0.08, Vapi: 0.08, Retell AI: 0.08, Bland AI: 0.06}

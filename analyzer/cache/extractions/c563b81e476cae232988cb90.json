@@ -1,0 +1,71 @@
+{
+ "opp_id": "OPP-0050",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "you're looking at voice AI agents for appointment booking",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_appointment_booking",
+   "quote": "our customers book installs and service visits by phone. We want AI agents to handle that.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "bundled_with_voice",
+   "quote": "We have edge compute built into the voice agent for exactly that. Your functions run close to the call, inside the same platform.",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "rep",
+   "quote": "We have edge compute built into the voice agent for exactly that.",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [
+    "AWS Lambda"
+   ],
+   "quote": "So that's instead of us standing up something like AWS Lambda and pointing the agent's webhook at it?",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Twilio"
+   ],
+   "quote": "Today we're running on Twilio for the telephony piece",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "voice_quality",
+    "price",
+    "cost_predictability"
+   ],
+   "quote": "Voice quality and call completion are basically what we'll be judged on.",
+   "confidence": "medium"
+  },
+  "stated_reason": {
+   "value": "price",
+   "quote": "I'm wary of anything that's cheap per minute but has extras that show up later.",
+   "confidence": "medium"
+  }
+ }
+}

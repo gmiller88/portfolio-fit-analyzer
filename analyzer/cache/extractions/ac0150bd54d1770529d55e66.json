@@ -1,0 +1,73 @@
+{
+ "opp_id": "OPP-0031",
+ "scenario": "latent_standalone",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "We want to replace it with voice AI agents that actually understand what someone is asking and either resolve it or hand off cleanly.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_ivr_replacement",
+   "quote": "We have a classic touch-tone IVR. Press one for balance, press two for payments, and so on.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "bundled_with_voice",
+   "quote": "we don't want inference as a separate product. We only care about it because the voice agent needs a model behind it.",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "buyer",
+   "quote": "Which brings me to the LLM side.",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [
+    "Together AI",
+    "Fireworks"
+   ],
+   "quote": "we've been getting quotes from Together AI and Fireworks",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Vapi"
+   ],
+   "quote": "We've built a working demo on Vapi",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "maturity",
+    "voice_quality",
+    "single_vendor",
+    "price"
+   ],
+   "quote": "how proven the vendor is for production AI workloads.",
+   "confidence": "medium"
+  },
+  "stated_reason": {
+   "value": "maturity",
+   "quote": "how proven the vendor is for production AI workloads. A demo is easy. Running real customer calls all day is different.",
+   "confidence": "medium"
+  }
+ }
+}

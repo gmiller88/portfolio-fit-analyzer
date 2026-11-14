@@ -1,0 +1,69 @@
+{
+ "opp_id": "OPP-0002",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "messaging",
+   "quote": "you came mostly to talk messaging, specifically OTP verification for Lumidyn's customer logins and checkout.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "otp_verification",
+   "quote": "We send one-time codes by SMS at login and for high-value orders.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Twilio"
+   ],
+   "quote": "We're currently on Twilio for that, and we're looking at what else is out there.",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "cost_predictability",
+    "price",
+    "single_vendor"
+   ],
+   "quote": "Our biggest worry is surprise bills.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "single_vendor",
+   "quote": "Our leadership leans toward consolidating with our existing cloud and AI vendor wherever possible, so I'll have to justify adding another one.",
+   "confidence": "medium"
+  }
+ }
+}

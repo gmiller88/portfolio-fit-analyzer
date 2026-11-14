@@ -1,0 +1,72 @@
+{
+ "opp_id": "OPP-0067",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "you want voice AI agents to handle appointment booking.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_appointment_booking",
+   "quote": "families call to book placement assessments, tutoring sessions, parent meetings.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "bundled_with_voice",
+   "quote": "that function piece is part of the voice agent setup.",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "buyer",
+   "quote": "When the agent needs to check a calendar mid-call, it has to run some code somewhere. We've been looking at Cloudflare Workers for that, and AWS Lambda",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [
+    "Cloudflare Workers",
+    "AWS Lambda"
+   ],
+   "quote": "We've been looking at Cloudflare Workers for that, and AWS Lambda, since we're already on AWS for other things.",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Twilio"
+   ],
+   "quote": "We're on Twilio for the numbers right now.",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "integration_effort",
+    "single_vendor",
+    "voice_quality"
+   ],
+   "quote": "That's honestly my biggest worry, how much effort it is and how fast we can get live.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "single_vendor",
+   "quote": "there's a preference on my side to consolidate with our existing cloud vendor if it's close.",
+   "confidence": "high"
+  }
+ }
+}

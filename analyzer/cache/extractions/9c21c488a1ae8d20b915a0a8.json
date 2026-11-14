@@ -1,0 +1,72 @@
+{
+ "opp_id": "OPP-0005",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "I saw your note said voice AI agents, specifically a support agent.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_support_agent",
+   "quote": "We want an AI agent to handle the first layer and hand off to a human when it needs to.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "bundled_with_voice",
+   "quote": "it needs a language model behind it to actually think and respond. We host that inference on our own platform, so the model, the voice, and the phone numbers all sit under one roof.",
+   "confidence": "medium"
+  },
+  "inference_raised_by": {
+   "value": "rep",
+   "quote": "it needs a language model behind it to actually think and respond.",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [
+    "Baseten"
+   ],
+   "quote": "We've been talking to Baseten for the model side.",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Twilio",
+    "Sinch"
+   ],
+   "quote": "Our current voice is on Twilio. We've also had Sinch in to pitch us, so we're looking at both.",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "maturity",
+    "single_vendor",
+    "price"
+   ],
+   "quote": "what matters more to me is how proven the vendor is. Has this actually run in production for AI workloads at companies like ours?",
+   "confidence": "medium"
+  },
+  "stated_reason": {
+   "value": "maturity",
+   "quote": "what matters more to me is how proven the vendor is.",
+   "confidence": "high"
+  }
+ }
+}

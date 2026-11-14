@@ -1,0 +1,73 @@
+{
+ "opp_id": "OPP-0027",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "We want voice agents that handle the booking end to end.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_appointment_booking",
+   "quote": "our customers book delivery slots and pickup appointments by phone",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "bundled_with_voice",
+   "quote": "We host that inference on our platform, so it's part of the same agent rather than something you'd bolt on separately.",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "rep",
+   "quote": "A voice agent needs a language model behind it to understand the caller and decide what to say.",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [
+    "Fireworks"
+   ],
+   "quote": "We have a quote from Fireworks for the model side.",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Bandwidth",
+    "Twilio"
+   ],
+   "quote": "Bandwidth for our existing numbers. We've also prototyped on Twilio",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "cost_predictability",
+    "compliance",
+    "integration_effort",
+    "price"
+   ],
+   "quote": "my bigger concern isn't the rate, it's that we don't get surprised.",
+   "confidence": "medium"
+  },
+  "stated_reason": {
+   "value": "compliance",
+   "quote": "the hard requirement is Germany. Customer data, including call audio and transcripts, has to stay in Germany.",
+   "confidence": "medium"
+  }
+ }
+}

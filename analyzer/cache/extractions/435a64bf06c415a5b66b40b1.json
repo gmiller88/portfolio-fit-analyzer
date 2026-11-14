@@ -1,0 +1,70 @@
+{
+ "opp_id": "OPP-0072",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "You're looking at a voice AI support agent?",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_support_agent",
+   "quote": "We want AI agents to take the first pass on those calls",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "bundled_with_voice",
+   "quote": "I don't need an LLM API as its own product. I just need the agent to work. If it's simply how your agent runs, fine.",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "rep",
+   "quote": "Can I bring up our inference API?",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [
+    "OpenAI"
+   ],
+   "quote": "we've been prototyping the language model piece against OpenAI direct",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "integration_effort",
+    "maturity",
+    "voice_quality",
+    "price"
+   ],
+   "quote": "Our engineering team is small, so integration effort is a big deal. Two, I need to know the platform is proven for production AI workloads",
+   "confidence": "medium"
+  },
+  "stated_reason": {
+   "value": "maturity",
+   "quote": "I need to know the platform is proven for production AI workloads, not a demo that falls over.",
+   "confidence": "medium"
+  }
+ }
+}

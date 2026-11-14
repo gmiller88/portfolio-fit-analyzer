@@ -1,0 +1,70 @@
+{
+ "opp_id": "OPP-0071",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "sip_trunking",
+   "quote": "we're here mainly about SIP trunking. We're modernizing the contact center and want to get off our legacy carrier setup.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "sip_migration",
+   "quote": "We're modernizing the contact center and want to get off our legacy carrier setup.",
+   "confidence": "medium"
+  },
+  "inference_framing": {
+   "value": "standalone",
+   "quote": "we also offer an inference API for hosted open models, and you can buy it on its own. It doesn't need to be tied to our voice agent product or even our SIP.",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "rep",
+   "quote": "What's behind them for the language model piece?",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [
+    "Baseten",
+    "Together AI"
+   ],
+   "quote": "We've been testing Baseten and also Together AI.",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "latency",
+    "model_breadth",
+    "price"
+   ],
+   "quote": "First, latency. Our time to first token target is 600 milliseconds, because anything slower makes the calls feel awkward.",
+   "confidence": "medium"
+  },
+  "stated_reason": {
+   "value": "latency",
+   "quote": "What matters to us is two things. First, latency.",
+   "confidence": "medium"
+  }
+ }
+}

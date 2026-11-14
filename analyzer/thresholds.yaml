@@ -1,0 +1,16 @@
+# Every verdict threshold lives here. The Assumptions page edits a copy of these live.
+min_sample: 8                     # min relevant opportunities (area mentioned) or closed standalone deals before a call is made
+behavior:
+  standalone_usage_share_min: 0.30   # share of the area's revenue NOT invoked by Voice AI that counts as "standalone adoption"
+  min_accounts_using: 8              # min accounts using the area at all
+selfserve:                           # adjusts the behavior threshold (documented in README)
+  adjust_pp: 0.05                    # size of the shift to the behavior threshold
+  strong_paid_rate_no_voice: 0.08    # paid-90d rate WITHOUT voice at/above this = independent developer pull -> threshold lowered by adjust_pp
+  weak_paid_rate_no_voice: 0.04      # below this AND with-voice rate >= weak_voice_multiple x no-voice = conversion depends on voice -> threshold raised
+  weak_voice_multiple: 2.0
+  min_signups: 30
+pipeline:
+  standalone_demand_share_min: 0.15  # share of transcripts where buyer framed the area as standalone
+  buyer_initiated_share_min: 0.50    # of standalone mentions, share raised by the buyer
+  standalone_win_rate_min: 0.25      # win rate on closed standalone-framed deals
+near_threshold_pp: 0.05              # inputs within this of a threshold are flagged as sensitive

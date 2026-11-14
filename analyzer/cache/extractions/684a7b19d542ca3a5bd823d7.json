@@ -1,0 +1,72 @@
+{
+ "opp_id": "OPP-0013",
+ "scenario": "component",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "Ravi, your note said voice AI agents for appointment booking.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_appointment_booking",
+   "quote": "We want AI agents to answer, check advisor calendars, and book the slot.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "bundled_with_voice",
+   "quote": "we host the LLM through our Inference API, so the agent's brain doesn't have to be a separate vendor you wire in.",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "rep",
+   "quote": "we host the LLM through our Inference API, so the agent's brain doesn't have to be a separate vendor you wire in.",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [
+    "Together AI"
+   ],
+   "quote": "We've been testing Together AI for that.",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Twilio"
+   ],
+   "quote": "We're on Twilio for voice right now.",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "model_breadth",
+    "maturity",
+    "reliability",
+    "support_quality"
+   ],
+   "quote": "breadth of selection matters to us.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "model_breadth",
+   "quote": "That's a must-have for us, so let's make sure it gets answered.",
+   "confidence": "medium"
+  }
+ }
+}
