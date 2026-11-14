@@ -1,0 +1,69 @@
+{
+ "opp_id": "OPP-0069",
+ "scenario": "latent_standalone",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "We want a voice AI support agent that handles the routine calls and hands off the messy ones.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_support_agent",
+   "quote": "We want a voice AI support agent that handles the routine calls and hands off the messy ones.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "bundled_with_voice",
+   "quote": "Though I'd only want it as part of the agent. I don't want to adopt it as a separate product we have to manage.",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "rep",
+   "quote": "One thing I want to put on your radar early is the edge compute piece.",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [
+    "Cloudflare Workers"
+   ],
+   "quote": "We've been looking at Cloudflare Workers for that kind of tool-calling logic",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "single_vendor",
+    "maturity",
+    "reliability"
+   ],
+   "quote": "our preference is to consolidate. Fewer contracts, fewer vendors to review.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "maturity",
+   "quote": "how proven you are with production AI workloads. Not demos, real customers running this all day.",
+   "confidence": "medium"
+  }
+ }
+}

@@ -1,0 +1,70 @@
+{
+ "opp_id": "OPP-0057",
+ "scenario": "latent_standalone",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "my understanding is you want to talk about voice AI agents, specifically a support agent.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_support_agent",
+   "quote": "We want a voice agent to take the first pass and hand off to a person when it can't resolve something.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "bundled_with_voice",
+   "quote": "For you it's really just part of how the agent works, so the lookup logic lives alongside the agent instead of in a separate platform.",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "buyer",
+   "quote": "For the agent to work, we need some code running close to the call, right?",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [
+    "Cloudflare Workers",
+    "Fastly"
+   ],
+   "quote": "We've been looking at Cloudflare Workers and Fastly for that piece.",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "compliance",
+    "cost_predictability",
+    "single_vendor"
+   ],
+   "quote": "Data residency, first and foremost. We have students in Australia, so that data needs to stay in-region, and we need a DPA in place.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "compliance",
+   "quote": "Data residency, first and foremost. We have students in Australia, so that data needs to stay in-region, and we need a DPA in place. That's not negotiable for us.",
+   "confidence": "high"
+  }
+ }
+}

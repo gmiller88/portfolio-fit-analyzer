@@ -1,0 +1,72 @@
+{
+ "opp_id": "OPP-0024",
+ "scenario": "latent_standalone",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "I'll show you the voice AI agent builder first",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_outbound_qualification",
+   "quote": "For outbound qualification, the agent dials a lead, confirms who it's talking to, asks your qualifying questions",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "bundled_with_voice",
+   "quote": "For the voice agent, the model is just one component. You pick it in the config, and we run it alongside the speech and telephony.",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "buyer",
+   "quote": "Oh, and the LLM piece. We've been talking to Baseten about hosting the model, so I guess I should ask how that part works on your side.",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [
+    "Baseten"
+   ],
+   "quote": "We've been talking to Baseten about hosting the model",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Retell AI",
+    "Twilio"
+   ],
+   "quote": "We looked at Retell AI a bit, and we have Twilio for a lot of the basic calling already.",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "voice_quality",
+    "latency",
+    "price"
+   ],
+   "quote": "it has to sound good. Natural. People hang up if it feels robotic. And the calls need to actually go through and finish",
+   "confidence": "medium"
+  },
+  "stated_reason": {
+   "value": "latency",
+   "quote": "I worry a little that it'll feel laggy otherwise, you know, that awkward pause.",
+   "confidence": "medium"
+  }
+ }
+}

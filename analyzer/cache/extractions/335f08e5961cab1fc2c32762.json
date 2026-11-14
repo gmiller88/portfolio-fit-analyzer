@@ -1,0 +1,71 @@
+{
+ "opp_id": "OPP-0040",
+ "scenario": "latent_standalone",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "inference",
+   "quote": "I'll start with inference, because that's the urgent piece.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "llm_api_backend",
+   "quote": "We're building an LLM API backend for our own application, things like shipment exception summaries and dispatcher assistants.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "standalone",
+   "quote": "It's separate from anything voice. We just need to call a hosted model over an API and pay for it by the token.",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "buyer",
+   "quote": "I know the note you sent said inference was the main thing",
+   "confidence": "medium"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [
+    "Fireworks"
+   ],
+   "quote": "We're evaluating Fireworks right now.",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Twilio"
+   ],
+   "quote": "Right now we're on Twilio for the phone side",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "price",
+    "cost_predictability",
+    "support_quality"
+   ],
+   "quote": "the number I care about more is the bill at the end of the month. We got burned once by a usage-based service where the invoice was double what we forecast.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "price",
+   "quote": "Overall cost matters to us, per-minute and the total, not just the token number.",
+   "confidence": "medium"
+  }
+ }
+}

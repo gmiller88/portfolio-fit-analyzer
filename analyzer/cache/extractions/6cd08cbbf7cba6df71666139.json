@@ -1,0 +1,72 @@
+{
+ "opp_id": "OPP-0064",
+ "scenario": "latent_standalone",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "My understanding is you're looking at voice AI agents for support.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_support_agent",
+   "quote": "We figured an AI agent could take some of that load.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "bundled_with_voice",
+   "quote": "With Telnyx, that piece comes as part of the voice agent.",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "buyer",
+   "quote": "For the edge part we were told 50 ms at p95 would be good.",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [
+    "Cloudflare Workers"
+   ],
+   "quote": "we were also looking at Cloudflare Workers, to run the logic close to the callers.",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Vonage",
+    "Vapi"
+   ],
+   "quote": "We've got Vonage for the phone lines right now. And we poked at Vapi for the agent side",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "latency",
+    "single_vendor",
+    "support_quality"
+   ],
+   "quote": "I care about that, the time to first token, the round trip. People hang up if it lags.",
+   "confidence": "medium"
+  },
+  "stated_reason": {
+   "value": "single_vendor",
+   "quote": "we'd lean toward keeping things with our existing cloud and AI vendor if we can. Fewer contracts, fewer logins.",
+   "confidence": "medium"
+  }
+ }
+}

@@ -1,0 +1,70 @@
+{
+ "opp_id": "OPP-0052",
+ "scenario": "latent_standalone",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "you're building voice AI agents for appointment booking",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_appointment_booking",
+   "quote": "We want an agent that picks up, finds an open slot, books it, and sends a confirmation.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "bundled_with_voice",
+   "quote": "Within a Voice AI agent, Edge Compute is where small functions live right next to the agent.",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "rep",
+   "quote": "Edge Compute. Have you thought about how those tool calls run?",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [
+    "Fastly",
+    "Cloudflare Workers"
+   ],
+   "quote": "Fastly and Cloudflare Workers, both. My team prototyped on Cloudflare Workers already.",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "maturity",
+    "price",
+    "single_vendor"
+   ],
+   "quote": "How proven is this? Are people running production AI voice workloads on it, at my scale? I don't want to be the guinea pig.",
+   "confidence": "medium"
+  },
+  "stated_reason": {
+   "value": "maturity",
+   "quote": "But let me ask the thing I really care about. How proven is this?",
+   "confidence": "high"
+  }
+ }
+}

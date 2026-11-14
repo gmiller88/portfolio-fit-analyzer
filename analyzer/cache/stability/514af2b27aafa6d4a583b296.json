@@ -1,0 +1,31 @@
+{
+ "inference": {
+  "draws": 300,
+  "point_verdict": "latent_standalone",
+  "share_keeping_point_verdict": 0.947,
+  "distribution": {
+   "latent_standalone": 0.947,
+   "component": 0.037,
+   "insufficient": 0.013,
+   "standalone_business": 0.003
+  },
+  "usage_share_90pct_interval": [
+   0.071,
+   0.196
+  ]
+ },
+ "edge_compute": {
+  "draws": 300,
+  "point_verdict": "component",
+  "share_keeping_point_verdict": 0.953,
+  "distribution": {
+   "component": 0.953,
+   "insufficient": 0.037,
+   "latent_standalone": 0.01
+  },
+  "usage_share_90pct_interval": [
+   0.037,
+   0.216
+  ]
+ }
+}

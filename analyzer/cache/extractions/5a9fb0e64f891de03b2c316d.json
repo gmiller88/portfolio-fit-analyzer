@@ -1,0 +1,73 @@
+{
+ "opp_id": "OPP-0030",
+ "scenario": "latent_standalone",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "inference",
+   "quote": "Honestly the first thing is inference. We've got a lot of documents, meter reports, contracts, field paperwork, and we want to run them through a model in batches.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "batch_document_processing",
+   "quote": "we want to run them through a model in batches",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "standalone",
+   "quote": "Yeah, totally separate. It's just our own application calling an API. Nothing to do with the calls.",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "buyer",
+   "quote": "Honestly the first thing is inference.",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [
+    "Together AI",
+    "Baseten"
+   ],
+   "quote": "We've been talking to Together AI and Baseten too.",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Vapi",
+    "Retell AI"
+   ],
+   "quote": "We've played with Vapi, and we're looking at Retell AI as well.",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "reliability",
+    "voice_quality",
+    "price"
+   ],
+   "quote": "Reliability, mostly. If a batch job dies halfway through at two in the morning, that's a headache for my team.",
+   "confidence": "medium"
+  },
+  "stated_reason": {
+   "value": "price",
+   "quote": "Together AI sent a number, about $0.74 per million tokens. Yours was about $1.03, I think.",
+   "confidence": "low"
+  }
+ }
+}

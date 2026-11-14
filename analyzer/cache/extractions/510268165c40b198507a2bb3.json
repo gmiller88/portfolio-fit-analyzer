@@ -1,0 +1,72 @@
+{
+ "opp_id": "OPP-0050",
+ "scenario": "latent_standalone",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "We want to replace our IVR with voice AI agents.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_ivr_replacement",
+   "quote": "We want to replace our IVR with voice AI agents.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "medium"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "medium"
+  },
+  "edge_framing": {
+   "value": "bundled_with_voice",
+   "quote": "Our edge compute runs the functions your agent calls, close to the caller, as part of the voice agent.",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "buyer",
+   "quote": "We've been trying Cloudflare Workers for that part. Is that something you handle, or would we keep it separate?",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "medium"
+  },
+  "competitors_edge": {
+   "value": [
+    "Cloudflare Workers"
+   ],
+   "quote": "We've been trying Cloudflare Workers for that part.",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Vapi"
+   ],
+   "quote": "We've been testing with Vapi for a couple of months.",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "reliability",
+    "voice_quality",
+    "cost_predictability",
+    "latency"
+   ],
+   "quote": "So call completion matters a lot to me. If the call drops halfway through a rebooking, that's worse than the old IVR. And voice quality, too.",
+   "confidence": "medium"
+  },
+  "stated_reason": {
+   "value": "latency",
+   "quote": "Time to first token, how quickly the agent starts speaking after the person stops. If there's a long silence, people talk over it and the whole thing falls apart.",
+   "confidence": "medium"
+  }
+ }
+}

@@ -1,0 +1,73 @@
+{
+ "opp_id": "OPP-0074",
+ "scenario": "latent_standalone",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "your note said you're looking at replacing your IVR with voice AI",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_ivr_replacement",
+   "quote": "your note said you're looking at replacing your IVR with voice AI",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "standalone",
+   "quote": "you can buy it on its own through an API. It doesn't need to be tied to our voice agents.",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "rep",
+   "quote": "We also offer edge compute, where you run functions close to users",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [
+    "AWS Lambda",
+    "Cloudflare Workers"
+   ],
+   "quote": "We use AWS Lambda for a few things, yeah. I've heard of Cloudflare Workers too",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Bandwidth",
+    "Plivo"
+   ],
+   "quote": "Bandwidth for the main numbers. We tested Plivo on a small side project last year",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "single_vendor",
+    "price",
+    "cost_predictability"
+   ],
+   "quote": "my instinct is to keep things with one cloud and AI vendor if I can.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "single_vendor",
+   "quote": "my instinct is to keep things with one cloud and AI vendor if I can. Fewer contracts, fewer dashboards. So I need a reason to bring in another company.",
+   "confidence": "high"
+  }
+ }
+}

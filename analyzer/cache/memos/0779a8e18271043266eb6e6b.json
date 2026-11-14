@@ -1,0 +1,128 @@
+{
+ "area": "inference",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "m2",
+ "facts": {
+  "area": "AI Inference",
+  "verdict": {
+   "quadrant": "Latent standalone (diagnose losses)",
+   "recommendation": "diagnose_further"
+  },
+  "behavioral": {
+   "accounts_using": 149,
+   "adoption_pct": 37.2,
+   "standalone_usage_share_pct": 12.0,
+   "standalone_threshold_effective_pct": 25.0,
+   "standalone_accounts": 52,
+   "attached_accounts": 90,
+   "retention_12m_standalone_pct": 80.0,
+   "retention_12m_standalone_n": 30,
+   "retention_12m_attached_pct": 82.6,
+   "retention_12m_attached_n": 23,
+   "gross_margin_standalone_pct": 30.0,
+   "gross_margin_attached_pct": 30.1,
+   "median_months_to_attach": 2.0
+  },
+  "pipeline": {
+   "transcripts": 50,
+   "mentioning": 23,
+   "standalone_framed": 15,
+   "standalone_demand_share_pct": 30.0,
+   "buyer_initiated_share_of_standalone_pct": 73.3,
+   "standalone_closed_deals": 13,
+   "standalone_win_rate_pct": 53.8,
+   "bundled_win_rate_pct": 85.7,
+   "top_loss_concerns": [
+    "price",
+    "model_breadth",
+    "maturity"
+   ],
+   "top_competitors": [
+    "Together AI",
+    "Baseten",
+    "OpenAI"
+   ]
+  },
+  "selfserve": {
+   "signups": 210,
+   "paid_90d_rate_without_voice_pct": 12.2,
+   "paid_90d_rate_with_voice_pct": 23.8
+  },
+  "stated_vs_revealed": {
+   "won_accounts_stated_standalone": 7,
+   "mostly_voice_ai_share_pct": 14.3
+  },
+  "thresholds": {
+   "min_sample": 8,
+   "behavior_standalone_usage_share_min_pct": 30.0,
+   "standalone_demand_share_min_pct": 15.0,
+   "buyer_initiated_share_min_pct": 50.0,
+   "standalone_win_rate_min_pct": 25.0
+  },
+  "checks": [
+   "Standalone usage share (revenue) is 13.0 pts below the threshold (12.0% vs 25.0%)",
+   "Standalone demand share is 15.0 pts above the threshold (30.0% vs 15.0%)",
+   "Buyer-initiated share of standalone mentions is 23.3 pts above the threshold (73.3% vs 50.0%)",
+   "Standalone win rate is 28.8 pts above the threshold (53.8% vs 25.0%)"
+  ],
+  "sensitive": [],
+  "selfserve_note": "Self-serve signups convert to paid without voice at 12.2%, so the standalone-adoption threshold is lowered by 5 pts.",
+  "insufficient_reason": null,
+  "gtm": {
+   "weaknesses": [
+    "Only 12.0% of revenue is standalone usage against a 25.0% threshold.",
+    "Lost standalone deals most often cite price and model breadth.",
+    "Standalone win rate is 53.8% on 13 closed deals against 85.7% when bundled."
+   ],
+   "actions": [
+    {
+     "title": "Competitive positioning and a product-gap plan",
+     "what": "Battlecards and benchmarks against the named specialists, plus a prioritised gap list for product.",
+     "targets": "Lost standalone deals most often cite price and model breadth. Standalone win rate is 53.8% on 13 closed deals against 85.7% when bundled.",
+     "metric_to_watch": "Standalone win rate"
+    },
+    {
+     "title": "Standalone pricing and packaging",
+     "what": "Free tier or starter credits, price matching on the most-used models, and commit discounts to lower the barrier to a first paid month.",
+     "targets": "Lost standalone deals most often cite price and model breadth.",
+     "metric_to_watch": "Paid conversion without voice"
+    },
+    {
+     "title": "Sales enablement for standalone deals",
+     "what": "Non-voice discovery guides, a solutions-engineer overlay and structured proofs of concept for standalone evaluations.",
+     "targets": "Standalone win rate is 53.8% on 13 closed deals against 85.7% when bundled.",
+     "metric_to_watch": "Standalone win rate"
+    }
+   ]
+  },
+  "retention_window_months": 12,
+  "paid_window_days": 90
+ },
+ "memo": {
+  "recommendation": "diagnose_further",
+  "headline": "AI Inference shows standalone demand but weak standalone revenue, so diagnose the losses before committing to it as its own category.",
+  "evidence": "Behavior is weak: standalone usage share is 12.0% against a 25.0% effective threshold, though 52 standalone accounts retain at 80.0% over the 12-month window (n=30), close to attached at 82.6% (n=23). Pipeline is stronger: standalone demand share is 30.0%, 73.3% of it buyer-initiated, and win rate is 53.8% on 13 closed deals versus 85.7% bundled. Self-serve paid conversion within the 90-day window is 12.2% without voice and 23.8% with voice. Samples are small and the data is synthetic. Stronger usage share or a higher win rate would change the call.",
+  "weaknesses": [
+   "Only 12.0% of revenue is standalone usage against a 25.0% threshold.",
+   "Lost standalone deals most often cite price and model breadth.",
+   "Standalone win rate is 53.8% on 13 closed deals against 85.7% when bundled."
+  ],
+  "actions": [
+   {
+    "title": "Competitive positioning and a product-gap plan",
+    "rationale": "This targets the price and model-breadth losses and the gap between standalone and bundled win rates. Battlecards against Together AI, Baseten and OpenAI, plus a gap list for product, should show where deals are lost.",
+    "metric_to_watch": "Standalone win rate (currently 53.8% on 13 closed deals, a small sample)"
+   },
+   {
+    "title": "Standalone pricing and packaging",
+    "rationale": "This targets price as the top loss concern. Starter credits, price matching and commit discounts lower the barrier to a first paid month.",
+    "metric_to_watch": "Paid conversion without voice (currently 12.2% within the 90-day window)"
+   },
+   {
+    "title": "Sales enablement for standalone deals",
+    "rationale": "This targets the standalone win rate of 53.8% against 85.7% bundled. Non-voice discovery guides, solutions-engineer support and structured proofs of concept should help teams close standalone evaluations.",
+    "metric_to_watch": "Standalone win rate (currently 53.8% on 13 closed deals)"
+   }
+  ]
+ }
+}

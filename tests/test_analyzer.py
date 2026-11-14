@@ -238,16 +238,16 @@ def test_cli_override_changes_verdict_and_is_strict_json():
 
 # ---------- stability ----------
 from analyzer import stability
-def test_bootstrap_is_deterministic_and_reflects_fragility():
+def test_bootstrap_is_deterministic_and_latent_call_is_decisive():
     th = load_thresholds(); r = analysis.analyze("latent_standalone", th)["areas"]
-    a = stability.bootstrap("latent_standalone", th, r, B=60); b = stability.bootstrap("latent_standalone", th, r, B=60)
+    a = stability.bootstrap("latent_standalone", th, r, B=80); b = stability.bootstrap("latent_standalone", th, r, B=80)
     assert a == b                                                       # fixed seed
     inf = a["inference"]; assert abs(sum(inf["distribution"].values()) - 1) < 0.01
-    assert inf["point_verdict"] == "latent_standalone" and inf["share_keeping_point_verdict"] < 0.9   # the headline call is fragile
+    assert inf["point_verdict"] == "latent_standalone" and inf["share_keeping_point_verdict"] >= 0.85   # decisive (was 51% before the scenario was strengthened)
     lo, hi = inf["usage_share_90pct_interval"]; assert lo < r["inference"]["metrics"]["behavioral"]["standalone_usage_share"] < hi
-    c = stability.bootstrap("component", th, analysis.analyze("component", th)["areas"], B=60)
-    assert c["inference"]["share_keeping_point_verdict"] > 0.9          # the component call is robust
-
+    assert hi < th["behavior"]["standalone_usage_share_min"]            # the whole interval sits below the standalone-adoption line
+    c = stability.bootstrap("component", th, analysis.analyze("component", th)["areas"], B=80)
+    assert c["inference"]["share_keeping_point_verdict"] > 0.9
 
 # ---------- validation scoring ----------
 from analyzer import validation, extraction

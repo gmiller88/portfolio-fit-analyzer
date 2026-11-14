@@ -59,23 +59,23 @@
     "quote_grounding_rate": 1.0
    },
    "latent_standalone": {
-    "framing_and_raised_by_accuracy": 0.98,
+    "framing_and_raised_by_accuracy": 0.995,
     "fields": {
-     "primary_interest": 0.98,
-     "use_case": 0.98,
-     "inference_framing": 0.98,
-     "inference_raised_by": 0.96,
+     "primary_interest": 0.94,
+     "use_case": 0.9,
+     "inference_framing": 1.0,
+     "inference_raised_by": 0.98,
      "edge_framing": 1.0,
-     "edge_raised_by": 0.98,
-     "competitors_inference": 1.0,
+     "edge_raised_by": 1.0,
+     "competitors_inference": 0.98,
      "competitors_edge": 1.0,
      "competitors_voice": 1.0,
-     "decision_criteria": 0.48,
-     "stated_reason": 0.353
+     "decision_criteria": 0.56,
+     "stated_reason": 0.733
     },
     "quote_grounding_rate": 1.0
    }
   }
  },
- "scoring_note": "After v2, two scoring artifacts were fixed in validation.py: 'OpenAI direct' (the dataset's label) is treated as 'OpenAI', and multi-part quotes joined with ' | ' or '...' are checked part by part. Both only affected the competitor and quote-grounding rows; v1 rows above were scored before this fix (competitors_inference was 86%/92%, quote grounding 96%/90%)."
+ "scoring_note": "After v2, two scoring artifacts were fixed in validation.py: 'OpenAI direct' (the dataset's label) is treated as 'OpenAI', and multi-part quotes joined with ' | ' or '...' are checked part by part. Both only affected the competitor and quote-grounding rows; v1 rows above were scored before this fix (competitors_inference was 86%/92%, quote grounding 96%/90%). The v2 latent_standalone row was re-scored after the scenario was strengthened (new transcripts); the v1 row was measured on the earlier latent transcripts."
 }

@@ -1,0 +1,71 @@
+{
+ "opp_id": "OPP-0032",
+ "scenario": "latent_standalone",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "We want a voice AI support agent that handles inbound patient calls",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_support_agent",
+   "quote": "We want a voice AI support agent that handles inbound patient calls: appointment changes, directions, billing questions",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "bundled_with_voice",
+   "quote": "A voice agent needs a language model behind it to understand and respond, so our Voice AI agent uses our hosted inference API for that.",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "rep",
+   "quote": "A voice agent needs a language model behind it to understand and respond, so our Voice AI agent uses our hosted inference API for that.",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [
+    "Fireworks",
+    "Together AI"
+   ],
+   "quote": "we've gotten quotes from Fireworks and Together AI for those.",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Twilio"
+   ],
+   "quote": "Telephony is on Twilio right now, with a basic IVR.",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "voice_quality",
+    "price"
+   ],
+   "quote": "Voice quality, meaning the agent has to sound clear and natural to patients. And call completion. If calls drop or fail to connect, that's a real problem for a clinic. Then cost, obviously.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "price",
+   "quote": "The best quote we have is about $0.65 per million tokens. What would Telnyx be at?",
+   "confidence": "medium"
+  }
+ }
+}

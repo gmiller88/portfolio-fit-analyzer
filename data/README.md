@@ -17,7 +17,7 @@ Everything is seeded; regenerating from a scenario file reproduces the tables ex
 | Scenario | Story |
 |---|---|
 | `component` | Baseline. Inference and Edge are mostly pulled in by Voice AI agents. Standalone demand is low and mostly raised by reps, standalone deals often lose to specialist vendors, and self-serve Inference/Edge signups rarely convert to paid unless paired with voice. |
-| `latent_standalone` | Real buyer-led standalone demand for Inference (Edge stays component-like). Telnyx loses many of the standalone Inference deals to specialist inference clouds on model breadth and price. Accounts that do buy standalone Inference retain and expand. |
+| `latent_standalone` | Real buyer-led standalone demand for Inference (Edge stays component-like). Telnyx loses many of the standalone Inference deals to specialist inference clouds on model breadth and price, so little of that demand shows up in usage yet. Accounts that do buy standalone Inference retain and expand. |
 
 ## Layout (per scenario, `data/<scenario>/`)
 `accounts.csv`, `usage_monthly.csv`, `opportunities.csv`, `signups.csv`, `transcripts/<opp_id>.md`, `sanity_report.md`,

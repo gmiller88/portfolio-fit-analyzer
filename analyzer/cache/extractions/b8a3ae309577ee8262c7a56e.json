@@ -1,0 +1,67 @@
+{
+ "opp_id": "OPP-0063",
+ "scenario": "latent_standalone",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_api",
+   "quote": "I saw your note said you want to talk about the Voice API for a contact center overhaul.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "contact_center_modernization",
+   "quote": "our contact center is basically a legacy PBX setup with a bunch of bolted-on tooling. We want to rebuild it on APIs so my team can own the call flows.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "reliability",
+    "support_quality",
+    "single_vendor"
+   ],
+   "quote": "my default preference is to consolidate with them where I can. Fewer contracts, fewer vendors to manage, one place for billing.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "single_vendor",
+   "quote": "So I'm trying to understand why I'd add another vendor for voice rather than use what they offer.",
+   "confidence": "high"
+  }
+ }
+}

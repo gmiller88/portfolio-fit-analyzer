@@ -1,0 +1,70 @@
+{
+ "opp_id": "OPP-0066",
+ "scenario": "latent_standalone",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "you want voice AI agents doing outbound qualification. Is that still the core of it?",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_outbound_qualification",
+   "quote": "We want agents to call, ask four or five qualifying questions, and hand off the good ones to sales.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "bundled_with_voice",
+   "quote": "That's Edge Compute, and it's part of how the voice agent works on Telnyx.",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "rep",
+   "quote": "When the agent needs to do something mid-call, like look up a lead record or check a calendar slot, it runs a bit of your code. That's Edge Compute",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [
+    "Fastly",
+    "AWS Lambda"
+   ],
+   "quote": "We've been looking at Fastly and AWS Lambda for those little functions.",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "integration_effort",
+    "cost_predictability",
+    "maturity"
+   ],
+   "quote": "That's the integration effort I'm trying to avoid.",
+   "confidence": "medium"
+  },
+  "stated_reason": {
+   "value": "maturity",
+   "quote": "How many companies are running this kind of thing in production? We're a media company, not a call center, so we can't be the guinea pig.",
+   "confidence": "medium"
+  }
+ }
+}

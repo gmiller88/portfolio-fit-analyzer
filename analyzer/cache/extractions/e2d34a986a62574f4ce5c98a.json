@@ -1,0 +1,72 @@
+{
+ "opp_id": "OPP-0075",
+ "scenario": "latent_standalone",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "you want to talk about a voice AI support agent",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_support_agent",
+   "quote": "We want AI agents to handle those over the phone, and hand off to a human when it gets complicated.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [
+    "Sinch"
+   ],
+   "quote": "we've also been looking at Sinch's AI offering",
+   "confidence": "low"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Sinch"
+   ],
+   "quote": "We're currently using Sinch for some of our voice",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "integration_effort",
+    "maturity",
+    "reliability",
+    "single_vendor"
+   ],
+   "quote": "So integration effort and time to deploy are a big deal for us.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "maturity",
+   "quote": "How proven is Telnyx for production AI workloads? We can't be the guinea pig for this.",
+   "confidence": "medium"
+  }
+ }
+}

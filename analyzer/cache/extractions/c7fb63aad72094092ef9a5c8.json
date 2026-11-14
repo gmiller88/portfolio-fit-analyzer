@@ -1,0 +1,70 @@
+{
+ "opp_id": "OPP-0028",
+ "scenario": "latent_standalone",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "inference",
+   "quote": "the thing I actually want to discuss is hosted LLM inference on its own.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "batch_document_processing",
+   "quote": "We have a batch document processing pipeline: claims files, policy documents, adjuster notes.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "standalone",
+   "quote": "Telnyx sells inference as its own API, so you don't need our voice agents to use it.",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "buyer",
+   "quote": "Inference, mostly.",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [
+    "OpenAI"
+   ],
+   "quote": "We're on OpenAI direct right now for a pilot.",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "integration_effort",
+    "price",
+    "latency",
+    "reliability"
+   ],
+   "quote": "My real concern is integration effort.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "price",
+   "quote": "The other quote I have is about sixty cents per million tokens. Yours came back at about eighty-four cents.",
+   "confidence": "high"
+  }
+ }
+}

@@ -1,0 +1,72 @@
+{
+ "opp_id": "OPP-0051",
+ "scenario": "latent_standalone",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "So my understanding is you want voice AI agents for appointment booking.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_appointment_booking",
+   "quote": "Customers call to schedule meter installs, service visits, reconnections.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "bundled_with_voice",
+   "quote": "We offer that as part of the voice agent setup.",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "rep",
+   "quote": "And this is where I'd bring up edge compute, because your agents need to call into your scheduling logic mid-conversation",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [
+    "Cloudflare Workers",
+    "AWS Lambda"
+   ],
+   "quote": "We've been prototyping with Cloudflare Workers for the functions, and AWS Lambda for some of the backend glue.",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Sinch"
+   ],
+   "quote": "Sinch, for the carrier side. We're also looking at them for the AI piece",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "integration_effort",
+    "latency",
+    "maturity"
+   ],
+   "quote": "Latency is honestly my biggest concern.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "latency",
+   "quote": "Latency is honestly my biggest concern.",
+   "confidence": "high"
+  }
+ }
+}

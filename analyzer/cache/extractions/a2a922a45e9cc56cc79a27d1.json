@@ -1,0 +1,71 @@
+{
+ "opp_id": "OPP-0041",
+ "scenario": "latent_standalone",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "voice_ai_agents",
+   "quote": "I'd love to understand what's got you looking at voice AI agents. What's the use case on your side?",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "voice_ai_outbound_qualification",
+   "quote": "right now it's staff making calls to see if patients are, you know, a fit for certain programs. It's a lot of manual work. We want to automate some of that.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "bundled_with_voice",
+   "quote": "With Telnyx Voice AI the inference is part of the agent, so you're not stitching together a model host, telephony, and speech separately.",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "buyer",
+   "quote": "the agent needs an LLM behind it, obviously.",
+   "confidence": "medium"
+  },
+  "edge_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [
+    "OpenAI",
+    "Baseten"
+   ],
+   "quote": "We've been looking at OpenAI direct and also Baseten for that part.",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "cost_predictability",
+    "latency",
+    "voice_quality",
+    "price"
+   ],
+   "quote": "What I care about is that the bill is predictable.",
+   "confidence": "medium"
+  },
+  "stated_reason": {
+   "value": "latency",
+   "quote": "If there's a long pause, people hang up.",
+   "confidence": "low"
+  }
+ }
+}

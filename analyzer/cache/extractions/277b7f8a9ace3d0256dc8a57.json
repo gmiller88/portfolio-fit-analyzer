@@ -1,0 +1,71 @@
+{
+ "opp_id": "OPP-0072",
+ "scenario": "latent_standalone",
+ "model": "claude-sonnet-5-5",
+ "prompt_version": "v2",
+ "extraction": {
+  "primary_interest": {
+   "value": "edge_compute",
+   "quote": "the thing I most wanted to talk about is edge compute.",
+   "confidence": "high"
+  },
+  "use_case": {
+   "value": "edge_functions_routing",
+   "quote": "I want to run small functions close to the caller to decide where each request goes.",
+   "confidence": "high"
+  },
+  "inference_framing": {
+   "value": "not_mentioned",
+   "quote": "",
+   "confidence": "high"
+  },
+  "inference_raised_by": {
+   "value": "n/a",
+   "quote": "",
+   "confidence": "high"
+  },
+  "edge_framing": {
+   "value": "standalone",
+   "quote": "You can buy edge functions by themselves through the API. Nothing requires you to use our voice products.",
+   "confidence": "high"
+  },
+  "edge_raised_by": {
+   "value": "buyer",
+   "quote": "the thing I most wanted to talk about is edge compute.",
+   "confidence": "high"
+  },
+  "competitors_inference": {
+   "value": [],
+   "quote": "",
+   "confidence": "high"
+  },
+  "competitors_edge": {
+   "value": [
+    "Cloudflare Workers",
+    "AWS Lambda"
+   ],
+   "quote": "We prototyped on Cloudflare Workers, and some of the older stuff is on AWS Lambda.",
+   "confidence": "high"
+  },
+  "competitors_voice": {
+   "value": [
+    "Vapi"
+   ],
+   "quote": "Right now we're using Vapi for a pilot, and it's okay, but I want to compare options.",
+   "confidence": "high"
+  },
+  "decision_criteria": {
+   "value": [
+    "latency",
+    "cost_predictability"
+   ],
+   "quote": "Our target is 80 ms at p95 for the edge piece.",
+   "confidence": "high"
+  },
+  "stated_reason": {
+   "value": "latency",
+   "quote": "Our target is 80 ms at p95 for the edge piece.",
+   "confidence": "medium"
+  }
+ }
+}
