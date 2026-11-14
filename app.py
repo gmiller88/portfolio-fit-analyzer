@@ -18,15 +18,15 @@ if "T" not in st.session_state: st.session_state["T"] = copy.deepcopy(DEFAULT)
 T = st.session_state["T"]
 
 @st.cache_data(show_spinner=False)
-def run(scenario, th_json):
+def run(scenario, th_json, fp):
     return analysis.analyze(scenario, json.loads(th_json))
 
 @st.cache_data(show_spinner=False)
-def run_stability(scenario, th_json):
+def run_stability(scenario, th_json, fp):
     th = json.loads(th_json); return stability.bootstrap(scenario, th, analysis.analyze(scenario, th)["areas"], B=300)
 
 @st.cache_data(show_spinner=False)
-def run_validation(scenario):
+def run_validation(scenario, fp):
     return validation.validate(scenario, extraction.load_cached(scenario))
 
 def pct(x, d=1): return "n/a" if x is None else f"{x * 100:.{d}f}%"
@@ -40,8 +40,9 @@ with st.sidebar:
     if T != DEFAULT: st.info("Custom thresholds are active (see Assumptions).")
 
 st.error("**Synthetic data: illustrative only.** Every company, call and number here is fictional and machine-generated.", icon="⚠️")
-R = run(scenario, json.dumps(T))
-D = run(scenario, json.dumps(DEFAULT))
+FP = data.fingerprint(scenario)   # part of every cache key: a data update must never be served from stale caches
+R = run(scenario, json.dumps(T), FP)
+D = run(scenario, json.dumps(DEFAULT), FP)
 tables = data.load(scenario)
 
 def badge(key, label):
@@ -71,7 +72,7 @@ if page == "Verdict":
                 for c in v["behavior"]["checks"] + v["pipeline"]["checks"]:
                     st.markdown(f"{'✅' if c['passes'] else '❌'} {c['text']}" + ("  ⚠️ *within 5 pts: sensitive*" if c["sensitive"] else ""))
                 st.caption(v["behavior"]["selfserve_note"])
-            with st.spinner("Resampling to test how stable this verdict is…"): stab = (run_stability(scenario, json.dumps(T)) or {}).get(a)
+            with st.spinner("Resampling to test how stable this verdict is…"): stab = (run_stability(scenario, json.dumps(T), FP) or {}).get(a)
             if stab and v["key"] != "insufficient":
                 keep, lo_hi = stab["share_keeping_point_verdict"], stab["usage_share_90pct_interval"]
                 other = ", ".join(f"{LABELS[k].split(' (')[0]} {p * 100:.0f}%" for k, p in stab["distribution"].items() if k != v["key"] and p >= 0.03)
@@ -275,7 +276,7 @@ elif page == "Data and validation":
     cnt[3].metric("Transcripts", len(data.transcripts(scenario))); cnt[4].metric("Signups", f"{len(tables['signups']):,}")
     st.markdown("#### Did the extractions get it right?")
     st.caption(f"Claude's transcript extractions are scored against the hidden answer key the generator wrote. Only the validation module reads that key (it also serves the answer-key download on Data explorer). Model: `{extraction.model_name()}`, prompt version `{PROMPT_VERSION}`.")
-    vres = run_validation(scenario)
+    vres = run_validation(scenario, FP)
     if not vres["n_transcripts"]: st.error("No cached extractions to validate.")
     else:
         h = st.columns(3)
@@ -303,7 +304,7 @@ else:
     st.title("Data explorer")
     st.markdown("Everything the verdicts rest on, for both synthetic worlds: browse it here or download it. All of it is fictional and generated from the scenario files in `scenarios/` by the generator in `generator/`.")
     @st.cache_data(show_spinner=False)
-    def bundle(s, with_key):
+    def bundle(s, with_key, fp):
         files = dict(data.scenario_files(s))
         if with_key: files.update(validation.answer_files(s))
         buf = io.BytesIO()
@@ -311,13 +312,13 @@ else:
             for name, b in files.items(): z.writestr(f"{s}/{name}", b)
         return buf.getvalue()
     @st.cache_data(show_spinner=False)
-    def ext_json(s): return json.dumps({k: v for k, v in extraction.load_cached(s).items()}, indent=1).encode()
+    def ext_json(s, fp): return json.dumps({k: v for k, v in extraction.load_cached(s).items()}, indent=1).encode()
     st.markdown(f"#### Scenario `{scenario}`")
     c = st.columns(3)
-    c[0].download_button("Download full scenario (zip: tables, transcripts)", bundle(scenario, False), f"{scenario}_synthetic_data.zip", "application/zip", width="stretch")
-    c[1].download_button("…plus the hidden answer key", bundle(scenario, True), f"{scenario}_with_answer_key.zip", "application/zip", width="stretch",
+    c[0].download_button("Download full scenario (zip: tables, transcripts)", bundle(scenario, False, FP), f"{scenario}_synthetic_data.zip", "application/zip", width="stretch")
+    c[1].download_button("…plus the hidden answer key", bundle(scenario, True, FP), f"{scenario}_with_answer_key.zip", "application/zip", width="stretch",
                          help="The answer key is what the extraction validation scores against (the generator's true values).")
-    c[2].download_button("Claude's extractions (JSON, with quotes)", ext_json(scenario), f"{scenario}_extractions.json", "application/json", width="stretch")
+    c[2].download_button("Claude's extractions (JSON, with quotes)", ext_json(scenario, FP), f"{scenario}_extractions.json", "application/json", width="stretch")
     st.caption("The other scenario is one switch away in the sidebar. Table descriptions are in the data dictionary below.")
     names = {"accounts": "Accounts", "usage_monthly": "Monthly usage and billing", "opportunities": "Opportunities", "signups": "Self-serve signups"}
     tabs = st.tabs(list(names.values()) + ["Transcripts", "Data dictionary"])

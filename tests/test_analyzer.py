@@ -275,3 +275,22 @@ def test_every_page_renders(scenario, page):
     at.session_state["scenario"] = scenario; at.session_state["page"] = page; at.run()
     assert not at.exception
     assert len(at.title) == 1 and any("Synthetic data" in e.value for e in at.error), f"{scenario}/{page} did not render (title/banner missing)"
+
+
+# ---------- cache keys must track the data (a stale in-process cache once served old results after a data update) ----------
+import os
+def test_fingerprint_tracks_data_changes():
+    f1 = data.fingerprint("component"); assert f1 == data.fingerprint("component") and f1 != data.fingerprint("latent_standalone")
+    p = ROOT / "data" / "component" / "accounts.csv"; st = p.stat()
+    try:
+        os.utime(p, ns=(st.st_atime_ns, st.st_mtime_ns + 10**9))
+        assert data.fingerprint("component") != f1
+    finally: os.utime(p, ns=(st.st_atime_ns, st.st_mtime_ns))
+    assert data.fingerprint("component") == f1
+
+def test_every_streamlit_cache_is_keyed_on_the_data_fingerprint():
+    import re
+    src = (ROOT / "app.py").read_text()
+    found = list(re.finditer(r"@st\.cache_data[^\n]*\n\s*def (\w+)\(([^)]*)\)", src))
+    assert len(found) == 5
+    for m in found: assert "fp" in [x.strip() for x in m.group(2).split(",")], f"{m.group(1)} cache is not keyed on the data fingerprint"

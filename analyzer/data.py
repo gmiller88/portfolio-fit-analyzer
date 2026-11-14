@@ -1,11 +1,24 @@
 """Loads scenario tables. Never touches the generator's answer-key folder (only validation.py may)."""
-import functools
+import functools, hashlib
 import pandas as pd
-from .config import scenario_dir, DATA
+from .config import scenario_dir, DATA, CACHE
 DATA_README = DATA / "README.md"
 
-@functools.lru_cache(maxsize=8)
+def fingerprint(scenario):
+    """Cheap version stamp of everything a scenario's results depend on (its tables, transcripts and the cached LLM outputs).
+    Used in cache keys so that a data update can never be served from stale in-process caches."""
+    root = scenario_dir(scenario); h = hashlib.sha1()
+    files = [p for p in sorted(root.iterdir()) if p.is_file()] + sorted((root / "transcripts").glob("OPP-*.md"))
+    for sub in ("extractions", "stability", "memos"): files += sorted((CACHE / sub).glob("*.json"))
+    for p in files:
+        s = p.stat(); h.update(f"{p.name}|{s.st_size}|{s.st_mtime_ns}\n".encode())
+    return h.hexdigest()[:16]
+
 def load(scenario):
+    return _load(scenario, fingerprint(scenario))
+
+@functools.lru_cache(maxsize=8)
+def _load(scenario, _fp):
     d = scenario_dir(scenario)
     # keep_default_na=False: the region code "NA" is North America, not a missing value
     t = {n: pd.read_csv(d / f"{n}.csv", keep_default_na=False, na_values=[""]) for n in ("accounts", "usage_monthly", "opportunities", "signups")}
